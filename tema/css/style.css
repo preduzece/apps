@@ -306,7 +306,6 @@ hr {
 	position:relative;
 	
 	background: url(../img/bg1.jpg) no-repeat top center;
-  background-size: 100%;
 }
 
 #intro.intro {
@@ -333,7 +332,7 @@ hr {
 .intro .slogan h2 {
 	color: #FFF;
 	text-shadow: none;
-	font-size: 50px;
+	font-size: 60px;
 	line-height: 60px;
 	font-weight: 700;
 	font-family: Montserrat, sans-serif;
@@ -451,8 +450,8 @@ form#contact-form input,form#contact-form select,form#contact-form textarea {
 }
 
 form#contact-form input:focus,form#contact-form select:focus,form#contact-form textarea:focus {
-  -webkit-box-shadow: 0 1px 2px rgba(3, 56, 43, .05);
-          box-shadow: 0 1px 2px rgba(3, 56, 43, .05);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
 }
 .input-group-addon {
   background-color: #fefefe;
@@ -521,8 +520,7 @@ form#contact-form input:focus,form#contact-form select:focus,form#contact-form t
 
 footer {
 	text-align: center;
-	padding: 30px 0 ;
-
+	padding: 50px 0 ;
 	
 }
 
@@ -791,15 +789,4 @@ Parallax
 		font-size: 20px;
 	}
 	
-}
-
-
-/*slider*/
-#owl-demo .item{
-  margin: 3px;
-}
-#owl-demo .item img{
-  display: block;
-  width: 100%;
-  height: auto;
 }
