@@ -46,8 +46,7 @@
 	          ['Romania', 700]
 	        ]);
 
-	        var options = {
-	            region: '150' ,
+	        var options = { region: '150' ,
 		        colorAxis: {colors: ['#e33825']}
 	        };
 
@@ -56,11 +55,16 @@
 
 	        chart.draw(data, options);
       	}
+
+      	function focusCoverage () {
+      		location.hash = '#coverage';
+      	}
     </script>
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<body id="page-top" style="overflow: hidden"
+	 data-spy="scroll" data-target=".navbar-custom">
 	<!-- Preloader -->
 	<div id="preloader">
 	  <div id="load"></div>
@@ -187,6 +191,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="container" style="margin-bottom: 50px">
 			<div class="row">
 				<div class="col-lg-2 col-lg-offset-5">
@@ -237,13 +242,12 @@
 		</div>
 		
 		<div class="heading-about">
-			<div class="container">
 			
-			<div class="container">
+			<div class="container" onmouseover="focusCoverage()">
+				<a name="coverage"></a>
 				<!-- Mesto za mapu pokrivenosti-->
 				<div id="regions_div" style="width: 100%; height: 100%; border: 1px solid red;"></div>
-             </div>
-
+	        </div>
 		</div>
 	</section>
 	<!-- /Section: usluge -->
@@ -273,7 +277,7 @@
 			</div>
 		</div>
 		<div class="container" >
-          <div class="row" >
+          <div class="row">
             <div class="span12">
 
               <div id="owl-example" class="owl-carousel">
@@ -393,13 +397,9 @@
 	<!-- Section: map -->
     <section id="map" class="home-section text-center" style="padding-top: 0px">
 		<div class="heading-about" style="">
-			<iframe
-			    width="100%" height="500" frameborder="0" style="border:0" scrolling="no" style="overflow: hidden"
+			<iframe width="100%" height="500" frameborder="0" style="border:0" 
 			    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDEK0f6cfpourL8GuncdUqGpLTuVp42Dus
-			      &q=Pogled+DOO+Vranje &zoom=12 
-			      &attribution_source=Google+Maps+Embed+API
-			      &attribution_web_url=http://www.butchartgardens.com/
-			      &attribution_ios_deep_link_id=comgooglemaps://?daddr=Butchart+Gardens+Victoria+BC">
+			      &q=Pogled+DOO+Vranje &zoom=12  &attribution_source=Google+Maps+Embed+API">
 			</iframe>
 		</div>
 	</section>
