@@ -15,13 +15,10 @@
     <!-- Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="css/animate.css" rel="stylesheet" />
+
     <!-- Squad theme CSS -->
     <link href="css/style.css" rel="stylesheet">
-	<link href="assets/color.css" rel="stylesheet">
-
-	<!-- Owl Carousel Assets -->
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
+	<link href="css/front-color.css" rel="stylesheet">
 
     <script src="js/jquery-1.10.2.js"></script>
 
@@ -266,56 +263,55 @@
 				</div>
 			</div>
 		</div>
-		<div class="container" >
-          <div class="row" >
-            <div class="span12">
 
-              <div id="owl-example" class="owl-carousel">
+		<div class="container">
 
-                <div class="item darkCyan">
-                  <img src="img/slider/1.png" alt="Touch">
-                </div>
+            <div id="slider" class="carousel slide" data-ride="carousel">
 
-                <div class="item forestGreen">
-                  <img src="img/slider/2.png" alt="Grab">
-                </div>
+			  	<!-- Wrapper for slides -->
+			  	<div class="carousel-inner" role="listbox">
 
-                <div class="item orange">
-                  <img src="img/slider/3.png" alt="Responsive">
-                </div>
+				    <div class="item active">
+				    	<div class="row">
+				    		<div class="col-sm-3 col-md-3 col-lg-3">
+				    			<img src="img/slider/1.png" alt="...">
+				    		</div>
+				    		<div class="col-sm-3 col-md-3 col-lg-3">
+				    			<img src="img/slider/2.png" alt="...">
+				    		</div>
+				    		<div class="col-sm-3 col-md-3 col-lg-3">
+				    			<img src="img/slider/3.png" alt="...">
+				    		</div>
+				    		<div class="col-sm-3 col-md-3 col-lg-3">
+				    			<img src="img/slider/4.png" alt="...">
+				    		</div>
+				    	</div>
+				  	</div>
 
-                <div class="item yellow">
-                  <img src="img/slider/4.png" alt="CSS3">
-                </div>
+				    <div class="item">
+				    	<div class="row">
+				    		<div class="col-sm-3 col-md-3 col-lg-3">
+				    			<img src="img/slider/5.png" alt="...">
+				    		</div>
+				    		<div class="col-sm-3 col-md-3 col-lg-3">
+				    			<img src="img/slider/6.png" alt="...">
+				    		</div>
+				    		<div class="col-sm-3 col-md-3 col-lg-3">
+				    			<img src="img/slider/7.png" alt="...">
+				    		</div>
+				    		<div class="col-sm-3 col-md-3 col-lg-3">
+				    			<img src="img/slider/8.png" alt="...">
+				    		</div>
+				    	</div>
+				  	</div>
+			  	</div>
 
-                <div class="item dodgerBlue">
-                  <img src="img/slider/5.png" alt="Multi">
-                </div>
-
-                <div class="item skyBlue">
-                  <img src="img/slider/6.png" alt="Modern Browsers">
-                </div>
-
-                <div class="item zombieGreen">
-                  <img src="img/slider/7.png" alt="Zombie Browsers - old ones">
-                </div>
-
-                <div class="item violet">
-                  <img src="img/slider/8.png" alt="Take Control">
-                </div>
-
-                <div class="item yellowLight">
-                  <img src="img/slider/9.png" alt="Light">
-                </div>
-
-                <div class="item steelGray">
-                  <img src="img/slider/10.png" alt="Tons of Opotions">
-                </div>
-
-              </div>
-
-            </div>
-          </div>
+			  	<!-- Indicators -->
+			  	<ol class="carousel-indicators" style="top: 95%">
+				    <li data-target="#slider" data-slide-to="0" class="active"></li>
+				    <li data-target="#slider" data-slide-to="1"></li>
+			  	</ol>
+			</div>
 		</div>
 	</section>
 
@@ -431,17 +427,10 @@
     <script src="js/jquery.easing.min.js"></script>	
 	<script src="js/jquery.scrollTo.js"></script>
 	<script src="js/wow.min.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.js"></script>
 
-	<!-- Poziv Carousel -->
-    <script src="js/owl.carousel.min.js"></script>
-    <script>
-    $(document).ready(function($) {
-      $("#owl-example").owlCarousel();
-    });
-    $("body").data("page", "frontpage");
-    </script>
     <script src="js/bootstrap-collapse.js"></script>
     <script src="js/bootstrap-transition.js"></script>
     <script src="js/prettify.js"></script>
