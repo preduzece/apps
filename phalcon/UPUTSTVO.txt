@@ -1,0 +1,6 @@
+Prvo skines Phalcon kao php modul sa http://docs.phalconphp.com/en/latest/reference/install.html#
+onda ga instaliras u WAMP-u, pa ides u C:\wamp\bin\apache\apache2.4.9\conf\httpd.conf
+tamo skines ";" ispred "LoadModule rewrite_module modules/mod_rewrite.so"
+sad pokrenes i pogledas template za Phalcon... 
+
+U krajnjem slucaju zoves DODICA... :P
