@@ -4,3 +4,5 @@ tamo skines ";" ispred "LoadModule rewrite_module modules/mod_rewrite.so"
 sad pokrenes i pogledas template za Phalcon... 
 
 U krajnjem slucaju zoves DODICA... :P
+
+Uputstvo za test projekat http://docs.phalconphp.com/en/latest/reference/tutorial-rest.html#creating-a-model

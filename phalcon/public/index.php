@@ -18,9 +18,9 @@ try {
         return new \Phalcon\Db\Adapter\Pdo\Mysql(
         array(
             "host" => "localhost",
+            "dbname" => "phalcon",
             "username" => "root",
-            "password" => "",
-            "dbname" => "test"
+            "password" => ""
         ));
     });
 
@@ -34,7 +34,7 @@ try {
     //Setup a base URI so that all generated URIs include the "soko" folder
     $di->set('url', function(){
         $url = new \Phalcon\Mvc\Url();
-        $url->setBaseUri('/phalcon/');
+        $url->setBaseUri('/apps/phalcon/');
         return $url;
     });
 
