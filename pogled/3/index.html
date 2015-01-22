@@ -20,11 +20,11 @@
     <link href="css/style.css" rel="stylesheet">
 	<link href="css/front-color.css" rel="stylesheet">
 
-    <script src="js/jquery-1.10.2.js"></script>
-
     <!-- Prettify -->
     <link href="css/prettify.css" rel="stylesheet">
 
+    <script src="js/jquery-1.10.2.js"></script>
+    
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
@@ -55,10 +55,6 @@
 	        chart.draw(data, options);
 
 	        initialize();
-      	}
-
-      	function focusCoverage () {
-      		location.hash = '#coverage';
       	}
 
       	function initialize() {
@@ -125,6 +121,10 @@
 			var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 
   			map.mapTypes.set(pogled_map_type, customMapType);
+      	}
+
+      	function focusCoverage () {
+      		location.hash = '#coverage';
       	}
     </script>
 
