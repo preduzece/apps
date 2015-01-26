@@ -4,7 +4,7 @@
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>PHP Phalcon</title>
+	    <title>PHP Phalcon Framework</title>
 
 	    <!-- Bootstrap -->
 	    <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -18,37 +18,21 @@
   	</head>
   	<body>
 
-  		<div class="container">
-		  	<div class="row" style="margin-top: 50px">
-			  	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-			  	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			  		<?php use Phalcon\Tag; ?>
-
-					<h2>Sign up using this form</h2>
-
-					<?php echo Tag::form("signup/register"); ?>
-
-					 <p>
-					    <label for="name">Name</label>
-					    <?php echo Tag::textField(array("name", "class" => "form-control")) ?>
-					 </p>
-
-					 <p>
-					    <label for="email">E-Mail</label>
-					    <?php echo Tag::emailField(array("email", "class" => "form-control")) ?>
-					 </p>
-
-					 <p class="text-right">
-					    <?php echo Tag::submitButton(array("Register", "class" => "btn btn-primary")) ?>
-					 </p>
-
-					</form>
-			  	</div>
-		  	</div>
+  		<div class="jumbotron">
+	  		<div class="container">
+	  			<h1>This is Contact</h1>
+		  		<p class="text-right">
+			  		<?php 
+			  			use Phalcon\Tag;
+			  		?>
+		  			<?php echo Tag::linkTo(
+						array("signup", "Sign Up Here!", "class" => "btn btn-danger")); ?>
+				</p>
+	  		</div>
   		</div>
 
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	    <script src="js/jquery-1.11.2.min.js" type="text/javascrript"></script>
+	    <script src="js/jquery-1.11.2.min.js"></script>
 	    <!-- Include all compiled plugins (below), or include individual files as needed -->
 	    <script src="js/bootstrap.min.js"></script>
   	</body>
