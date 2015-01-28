@@ -18,15 +18,34 @@
   	</head>
   	<body>
 
-  		<div class="jumbotron">
-	  		<div class="container">
-	  			<h1>This is About</h1>
+  		<?php use Phalcon\Tag; ?>
+
+  		<div class="container">
+	  		<div class="page-header">
+	  			<div class="row">
+	  				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+	  					<h1>Phalcon <small>The fastest PHP framework!</small></h1>
+	  				</div>
+	  				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+	  					<ul class="nav nav-pills pull-right" style="margin-top: 7%">
+						  	<li role="presentation">
+						  		<?php echo Tag::linkTo( array("index", "Home")); ?>
+						  	</li>
+						  	<li role="presentation" class="active">
+						  		<?php echo Tag::linkTo( array("about", "About")); ?>
+						  	</li>
+						  	<li role="presentation">
+						  		<?php echo Tag::linkTo( array("contact", "Contact")); ?>
+						  	</li>
+						</ul>
+	  				</div>
+	  			</div>
+	  		</div>
+
+	  		<div class="jumbotron">
+	  			<h1>This is About page!</h1>
 		  		<p class="text-right">
-			  		<?php 
-			  			use Phalcon\Tag;
-			  		?>
-		  			<?php echo Tag::linkTo(
-						array("signup", "Sign Up Here!", "class" => "btn btn-danger")); ?>
+		  			<?php echo Tag::linkTo( array("signup", "Sign Up Here!", "class" => "btn btn-danger")); ?>
 				</p>
 	  		</div>
   		</div>

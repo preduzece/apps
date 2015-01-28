@@ -18,16 +18,108 @@
   	</head>
   	<body>
 
-  		<div class="jumbotron">
-	  		<div class="container">
-	  			<h1>This is Contact</h1>
+		<?php use Phalcon\Tag; ?>
+
+  		<div class="container">
+	  		<div class="page-header">
+	  			<div class="row">
+	  				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+	  					<h1>Phalcon <small>The fastest PHP framework!</small></h1>
+	  				</div>
+	  				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+	  					<ul class="nav nav-pills pull-right" style="margin-top: 7%">
+						  	<li role="presentation">
+						  		<?php echo Tag::linkTo( array("index", "Home")); ?>
+						  	</li>
+						  	<li role="presentation">
+						  		<?php echo Tag::linkTo( array("about", "About")); ?>
+						  	</li>
+						  	<li role="presentation" class="active">
+						  		<?php echo Tag::linkTo( array("contact", "Contact")); ?>
+						  	</li>
+						</ul>
+	  				</div>
+	  			</div>
+	  		</div>
+
+	  		<div class="jumbotron">
+	  			<h1>This is Contact page!</h1>
 		  		<p class="text-right">
-			  		<?php 
-			  			use Phalcon\Tag;
-			  		?>
-		  			<?php echo Tag::linkTo(
-						array("signup", "Sign Up Here!", "class" => "btn btn-danger")); ?>
+		  			<?php echo Tag::linkTo( array("signup", "Sign Up Here!", "class" => "btn btn-danger")); ?>
 				</p>
+	  		</div>
+
+	  		<div class="row" style="padding: 50px 100px 0 100px">
+	  			<?php
+
+				use Phalcon\Forms\Form,
+				    Phalcon\Forms\Element\Text,
+				    Phalcon\Forms\Element\Email,
+				    Phalcon\Forms\Element\Select,
+				    Phalcon\Forms\Element\Textarea,
+				    Phalcon\Validation\Validator\PresenceOf,
+				    Phalcon\Validation\Validator\StringLength;
+
+					# instaciranje polja forme
+					$name = new Text("name");
+					$email = new Email("email");
+					$gender = new Select("gender", 
+						array( 'M' => 'Male', 'F' => 'Female' ));
+					$text = new Textarea("text");
+
+					# instanciranje validatora za data polja
+					$name->addValidator(new PresenceOf(array(
+					    'message' => 'The name is required'
+					)));
+
+					$email->addValidator(new PresenceOf(array(
+					    'message' => 'The email is required'
+					)));
+
+					$text->addValidator(new PresenceOf(array(
+					    'message' => 'The message is required'
+					)));
+
+					$form = new Form();
+
+					$form->add($name); $form->add($email);
+					$form->add($gender); $form->add($text); ?>	
+
+	  			<p style="text-center">
+	  				<?php if (isset($status)) echo $status; ?>
+		        </p>
+
+				<form action="contact/register" method="POST" role="form">
+
+	  				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					
+						<div class="form-group">
+							<?php echo $form->render("name", array(
+								"class" => "form-control", "placeholder" => "Your name")); ?>
+						</div>
+					
+						<div class="form-group">
+							<?php echo $form->render("email", array(
+								"class" => "form-control", "placeholder" => "Your email")); ?>
+						</div>
+					
+						<div class="form-group">
+							<?php echo $form->render("gender", array( "class" => "form-control")); ?>
+						</div>
+					
+					</div>
+
+	  				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+						<div class="form-group">
+							<?php echo $form->render("text", array( 
+								"class" => "form-control", "rows" => 6, "placeholder" => "Your message")); ?>
+						</div>
+					</div>
+
+					<div class="text-center">
+						<button type="submit" class="btn btn-primary">Send mesage</button></div>
+	  			</form>	
 	  		</div>
   		</div>
 
