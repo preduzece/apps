@@ -5,10 +5,10 @@ try {
     //Register an autoloader
     $loader = new \Phalcon\Loader();
     $loader->registerDirs(
-    array(
-        '../app/controllers/',
-        '../app/models/'
-    ))->register();
+        array(
+            '../app/controllers/',
+            '../app/models/'
+        ))->register();
 
     //Create a DI (dependency injector)
     $di = new Phalcon\DI\FactoryDefault();
@@ -31,7 +31,8 @@ try {
         return $view;
     });
 
-    //Setup a base URI so that all generated URIs include the "soko" folder
+    //Setup a base URI so that all generated 
+    // URIs include the "phalcon" folder
     $di->set('url', function(){
         $url = new \Phalcon\Mvc\Url();
         $url->setBaseUri('/apps/phalcon/');

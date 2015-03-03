@@ -73,7 +73,6 @@ a:focus {
 }
 
 .navbar-brand h1{
-	color: #fff;
   font-size: 20px;
   line-height: 40px;
 }
@@ -83,7 +82,6 @@ a:focus {
 }
 
 .nav.navbar-nav {
-    background-color: rgba(255,255,255,.4);
 }
 
 .navbar-custom.top-nav-collapse .nav.navbar-nav {
@@ -94,7 +92,6 @@ a:focus {
 .navbar-custom ul.nav li a {
 	font-size: 12px;
 	letter-spacing: 1px;
-    color: #444;
 	text-transform: uppercase;
 	font-weight: 700;
 }
@@ -305,12 +302,12 @@ hr {
 	width:100%;
 	position:relative;
 	
-	background: url(../img/bg1.jpg) no-repeat top center fixed;
+
   background-size: 100%;
 }
 
 #intro.intro {
-	padding:10% 0 0 0;
+	padding:0 0 0 0;
 }
 
 .intro .slogan {
@@ -723,7 +720,7 @@ Parallax
         padding: 20px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        background: 0 0;
+        background: rgba(255, 255, 255, 0.4);
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
