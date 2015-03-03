@@ -2,6 +2,7 @@
 
 class ContactController extends \Phalcon\Mvc\Controller
 {
+    $status = '';
 
     public function indexAction()
     {
