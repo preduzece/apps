@@ -10,10 +10,10 @@
 
 	$mailer = Swift_Mailer::newInstance($transporter);
 
-	$message = Swift_Message::newInstance($_POST['naslov'])
+	$message = Swift_Message::newInstance($_POST['title'])
       ->setFrom(array('epostar011@gmail.com' => 'Vas E-Postar'))
-      ->setTo(array($_POST['email']=> $_POST['ime']))
-      ->setBody($_POST['poruka']);
+      ->setTo(array($_POST['email']=> $_POST['name']))
+      ->setBody($_POST['message']);
 
     $result = $mailer->send($message);
 
