@@ -137,45 +137,43 @@
 		        		<span aria-hidden="true">&times;</span></button>
 		        	<h3 class="modal-title" id="myModalLabel">Zakazivanje transporta</h3>
 		      	</div>
-			    <form action="" method="POST" role="form">
+			    <form action="transport.php" method="POST" role="form">
 			    	<div class="modal-body has-error">
 
 				    	<div class="form-group">
 				    		<div class="row" style="margin:0px">
 				    			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				    				<input type="text" class="form-control" name="polaz" placeholder="Polaziste">
+				    				<input type="text" class="form-control" name="start" placeholder="Polaziste" required>
 				    			</div>
 				    			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				    				<input type="text" class="form-control" name="odred" placeholder="Odrediste">
+				    				<input type="text" class="form-control" name="destin" placeholder="Odrediste" required>
 				    			</div>
 				    			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				    				<input type="date" class="form-control" name="datum" placeholder="Datum">
+				    				<input type="date" class="form-control" name="date" placeholder="Datum" required>
 				    			</div>
 				    		</div>
 				    	</div>
 
 				    	<div class="form-group">
-				    		<div class="row" style="margin:0px">
+				    		<div class="row">
 				    			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				    				<select class="form-control" name="teret">
-				    					<option value="1">Cvrsti teret</option>
-				    					<option value="2">Tekucine</option>
-				    					<option value="3">Gas</option>
+				    				<select class="form-control" name="cargo" required>
+				    					<option value="Cvrsti teret">Cvrsti teret</option>
+				    					<option value="Tekucine">Tekucine</option>
+				    					<option value="Gas">Gas</option>
 				    				</select>
 				    			</div>
 				    			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				    				<input type="text" class="form-control" name="klijent" placeholder="Firma">
+				    				<input type="text" class="form-control" name="client" placeholder="Firma" required>
 				    			</div>
 				    			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				    				<input type="email" class="form-control" name="kontakt" placeholder="Kontakt">
+				    				<input type="email" class="form-control" name="contact" placeholder="Kontakt" required>
 				    			</div>
 				    		</div>
 				    	</div>
 				    
-				    	<div class="form-group">
-				    		<div class="row">
-				    			<textarea rows="3" class="form-control" name="" placeholder="Napomena..."></textarea>
-				    		</div>
+				    	<div class="form-group" style="margin: 0 15px 0 15px">
+				    		<textarea rows="3" class="form-control" name="remark" placeholder="Napomena..." required></textarea>
 				    	</div>
 			      	</div>
 			      	<div class="modal-footer">
@@ -199,7 +197,7 @@
                 	data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <h1>Pogled doo</h1>
                 </a>
             </div>
@@ -570,17 +568,20 @@
 
 		    <div class="row">
 		      	<div class="col-lg-12">
-			        <form name="sentMessage" method="POST" accept="contact.php">
+			        <form method="POST" action="contact.php">
 			          <div class="row">
 			            <div class="col-md-6">
-			              <div class="form-group has-error">
-			                <input type="text" class="form-control" placeholder="Naslov *" name="title" required>
-			              </div>
+
 			              <div class="form-group has-error">
 			                <input type="text" class="form-control" placeholder="Vase Ime *" name="name" required>
 			              </div>
+
 			              <div class="form-group has-error">
 			                <input type="email" class="form-control" placeholder="Vas Email *" name="email" required>
+			              </div>
+
+			              <div class="form-group has-error">
+			                <input type="text" class="form-control" placeholder="Telefon *" name="phone" required>
 			              </div>
 			            </div>
 			            <div class="col-md-6">
@@ -590,7 +591,8 @@
 			            </div>
 			            <div class="clearfix"></div>
 			            <div class="col-lg-12 text-center">
-			              <div id="success" style="margin-bottom: 30px"></div>
+
+			              <div id="success" style="margin-bottom: 30px"><?php if(isset($status)) echo $status; ?></div>
 			              <button type="submit" class="btn btn-skin pull-center">Posalji poruku</button>
 			            </div>
 			          </div>
