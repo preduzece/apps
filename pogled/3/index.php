@@ -305,7 +305,7 @@
 						<div class="wow bounceInDown" data-wow-delay="0.4s">
 						<div class="section-heading">
 						<h2>Usluge</h2>
-						<a href="#partners">
+						<a href="#team">
 							<i class="fa fa-2x fa-angle-down"></i>
 						</a>
 						</div>
@@ -382,7 +382,7 @@
 						<div class="wow bounceInDown" data-wow-delay="0.4s">
 						<div class="section-heading">
 						<h2>Nas tim</h2>
-						<a href="#contact">
+						<a href="#trailers">
 							<i class="fa fa-2x fa-angle-down"></i>
 						</a>
 						</div>
@@ -441,6 +441,60 @@
 		            </div>
 
 		        </div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Section: prikolice -->
+	<section id="trailers" class="home-section text-center">
+		<div class="heading-contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="wow bounceInDown" data-wow-delay="0.4s">
+						<div class="section-heading">
+						<h2>Prikolice</h2>
+						<a href="#partners">
+							<i class="fa fa-2x fa-angle-down"></i>
+						</a>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-2 col-lg-offset-5">
+						<hr class="marginbot-50">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+
+            <div id="carousel" class="carousel slide" data-ride="carousel" style="margin-top: 5%">
+
+			  	<!-- Wrapper for slides -->
+			  	<div class="carousel-inner" role="listbox">
+
+				    <div class="item active" style="height: 500px">
+				    	<img src="img/trailers/1.jpg" alt="...">
+				  	</div>
+
+				    <div class="item" style="height: 500px">
+				    	<img src="img/trailers/2.jpg" alt="...">
+				  	</div>
+
+				    <div class="item" style="height: 500px">
+				    	<img src="img/trailers/3.jpg" alt="...">
+				  	</div>
+			  	</div>
+
+
+		    <a class="left carousel-control" href="#carousel" data-slide="prev">
+		    	<span class="glyphicon glyphicon-chevron-left"></span></a>
+		    <a class="right carousel-control" href="#carousel" data-slide="next">
+		    	<span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
 	</section>
