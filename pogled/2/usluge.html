@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Services | Corlate</title>
+    
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+        <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['geochart']}]}"></script>
+    <script type="text/javascript">
+
+        var map; google.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['Country', 'Popularity'],
+              ['Germany', 200],
+              ['Spain', 300],
+              ['Sweden', 400],
+              ['Austria', 500],
+              ['France', 600],
+              ['Romania', 700]
+            ]);
+
+            var options = { region: '150' ,
+                colorAxis: {colors: ['#e33825']}
+            };
+
+            var chart = new google.visualization
+                .GeoChart(document.getElementById('regions_div'));
+
+            chart.draw(data, options);
+
+            initialize();
+        }
+
+    </script>
+</head><!--/head-->
+
+<body>
+
+    <header id="header">
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="onama.html">O nama</a></li>
+                        <li class="active"><a href="usluge.html">Usluge i pokrivenost</a></li>
+                        <li><a href="galerija.html">Galerija</a></li>
+                        <li><a href="kontakt.html">Konatakt</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jezik <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><img src="images/lang/rs.png"/> Srpski</a></li>
+                                <li><a href="#"><img src="images/lang/gb.png"/> English</a></li>
+                                <li><a href="#"><img src="images/lang/de.png"/> Deutsch</a></li>
+                                <li><a href="#"><img src="images/lang/it.png"/> Italiano</a></li>
+                            </ul>
+                        </li>                     
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+
+        <div class="container">
+            <div class="row"><br>
+            <br>
+            <br>
+
+                <div class="center wow fadeInDown">
+                    <h2>Usluge i pokrivenost</h2>
+
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quas totam debitis consectetur, ex saepe vero itaque culpa. Accusantium architecto nobis autem veniam, blanditiis quibusdam explicabo laboriosam in repudiandae aspernatur
+                        <br><br>
+
+
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi quaerat tempore, odio molestias asperiores aliquid deleniti numquam quae inventore eveniet doloribus laboriosam in, maiores, esse unde necessitatibus dignissimos fuga.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure vitae, inventore soluta, reprehenderit modi quia aliquam culpa,
+                    </p>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-box center">
+                        <div class="service-icon">
+                            <img src="images/ico/service-icon-2.png" alt="" />
+                        </div>
+                        <div class="service-desc">
+                            <h5>Pouzdan</h5>
+                            <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.Duis semper magna metus electram accommodare</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-box center">
+                        <div class="service-icon">
+                            <img src="images/ico/service-icon-3.png" alt="" />
+                        </div>
+                        <div class="service-desc">
+                            <h5>Bezbedan</h5>
+                            <p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.Duis semper magna metus electram accommodare</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="service-box center">
+                        <div class="service-icon ">
+                            <img src="images/ico/service-icon-1.png" alt="" />
+                        </div>
+                        <div class="service-desc">
+                            <h5>Brz transport</h5>
+                            <p>Vestibulum tin cidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.Duis semper magna metus electram accommodare</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>      
+            <br>
+
+            <div class="row">
+            <h2 class="center">Zemlje i firme sa kojima saradjujemo</h2>
+                <div class="col-sm-9 col-md-9 col-xs-9">
+                    <div id="regions_div" style=" width: 100%; height: 100%;"></div><br>
+                    <br>
+                    <br>
+                </div>
+
+                <div class="col-sm-3 col-md-3 col-xs-3">
+                <p>Pokrivenost drzava u kojima vozimo:</p>
+                    <ul class="text-left inverse" >
+                        <img src="images/lang/rs.png"/>Srbija<br>
+                        <img src="images/lang/gb.png"/> Engleska<br>
+                        <img src="images/lang/de.png"/> Nemacka<br>
+                        <img src="images/lang/it.png"/> Italija<br>
+                        <img src="images/lang/rs.png"/>Srbija<br>
+                        <img src="images/lang/gb.png"/> Engleska<br>
+                        <img src="images/lang/de.png"/> Nemacka<br>
+                        <img src="images/lang/it.png"/> Italija<br>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="onama.html">O nama</a></li>
+                        <li><a href="usluge.html">Usluge i pokrivenost</a></li>
+                        <li><a href="galerija.html">Galerija</a></li>
+                        <li><a href="kontakt.html">Konatakt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
+</html>

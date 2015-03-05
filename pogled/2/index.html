@@ -1,518 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Pogled DOO</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Fonts -->
+    <title>Home | Corlate</title>
+	
+	<!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/animate.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
 
-    <!-- CSS -->
-    <link href="css/style.css" rel="stylesheet">
-	<link href="css/front-color.css" rel="stylesheet">
+<body class="homepage">
 
-    <script src="js/jquery-1.10.2.js"></script>
+    <header id="header">
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="onama.html">O nama</a></li>
+                        <li><a href="usluge.html">Usluge i pokrivenost</a></li>
+                        <li><a href="galerija.html">Galerija</a></li>
+                        <li><a href="kontakt.html">Konatakt</a></li>
 
-    <!-- Prettify -->
-    <link href="css/prettify.css" rel="stylesheet">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jezik <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><img src="images/lang/rs.png"/> Srpski</a></li>
+                                <li><a href="#"><img src="images/lang/gb.png"/> English</a></li>
+                                <li><a href="#"><img src="images/lang/de.png"/> Deutsch</a></li>
+                                <li><a href="#"><img src="images/lang/it.png"/> Italiano</a></li>
+                            </ul>
+                        </li>                     
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
 
-    <script src="js/jquery-1.10.2.js"></script>
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
 
-    <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+                <div class="item active" style="background-image: url(images/slider/bg1.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                </div>
+                            </div>
 
-	<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['geochart']}]}"></script>
-    <script type="text/javascript">
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="images/slider/img1.png" class="img-responsive">
+                                </div>
+                            </div>
 
-      	var map; google.setOnLoadCallback(drawRegionsMap);
+                        </div>
+                    </div>
+                </div><!--/.item-->
 
-      	function drawRegionsMap() {
+                <div class="item" style="background-image: url(images/slider/bg2.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                </div>
+                            </div>
 
-	        var data = google.visualization.arrayToDataTable([
-	          ['Country', 'Popularity'],
-	          ['Germany', 200],
-	          ['Spain', 300],
-	          ['Sweden', 400],
-	          ['Austria', 500],
-	          ['France', 600],
-	          ['Romania', 700]
-	        ]);
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="images/slider/img2.png" class="img-responsive">
+                                </div>
+                            </div>
 
-	        var options = { region: '150' ,
-		        colorAxis: {colors: ['#e33825']}
-	        };
+                        </div>
+                    </div>
+                </div><!--/.item-->
 
-	        var chart = new google.visualization
-	        	.GeoChart(document.getElementById('regions_div'));
+                <div class="item" style="background-image: url(images/slider/bg3.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="images/slider/img3.png" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </section><!--/#main-slider-->
 
-	        chart.draw(data, options);
-
-	        initialize();
-      	}
-
-      	function initialize() {
-
-      		var myLatlng = new google.maps.LatLng(42.526005, 21.90823);
-
-      		var pogled_map_type = 'custom_style';
-
-	        var mapOptions = {
-	          	zoom: 12, 
-	          	center: myLatlng,
-	          	zoomControl: true, 
-	          	scrollwheel: false, 
-
-	          	mapTypeControlOptions: {
-		      		mapTypeIds: [
-		      			google.maps.MapTypeId.ROADMAP, 
-		      			pogled_map_type
-		      		]
-			   	},
-			    mapTypeId: pogled_map_type
-	        };
-
-	        var featureOpts = [
-			    {
-			      stylers: [
-			        { hue: '#890000' },
-			        { visibility: 'simplified' },
-			        { gamma: 0.5 }, { weight: 1 }
-			      ]
-			    },
-			    {
-			      elementType: 'labels.text',
-			      stylers: [
-			        { color: '#890000' }
-			      ]
-			    },
-			    {
-			      elementType: 'labels.text.stroke',
-			      stylers: [
-			        { weight: 50 }
-			      ]
-			    },
-			    {
-			      featureType: 'water',
-			      stylers: [
-			        { color: '#890000' }
-			      ]
-			    }
-			];
-
-	        map = new google.maps.Map(
-	        	document.getElementById('map'), mapOptions);
-
-	        var styledMapOptions = {
-		    	name: 'Pogled Style'
-		  	};
-
-	        var marker = new google.maps.Marker({
-			    position: myLatlng,  map: map,
-			    title: 'Pogled DOO Vranje'
-			});
-
-			var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
-
-  			map.mapTypes.set(pogled_map_type, customMapType);
-      	}
-
-      	function focusCoverage () {
-      		location.hash = '#coverage';
-      	}
-    </script>
-
-</head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom" >
-	<!-- Preloader -->
-	<div id="preloader">
-	  <div id="load"></div>
-	</div>
-
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <section id="feature" >
         <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" 
-                	data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <h1>Pogled doo</h1>
-                </a>
+           <div class="center wow fadeInDown">
+                <h2>Nase usluge</h2><br>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-		      	<ul class="nav navbar-nav">
-			        <li class="active"><a href="#intro">Početna</a></li>
-			        <li><a href="#about">O nama</a></li>
-					<li><a href="#services">Usluge</a></li>
-					<li><a href="#partners">Partneri</a></li>
-					<li><a href="#contact">Kontakt</a></li>
-			        <li class="dropdown">
-			          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Jezik<b class="caret"></b></a>
-			          	<ul class="dropdown-menu">
-				            <li><a href="#"><img src="img/lang/rs.png"/> Srpski</a></li>
-				            <li><a href="#"><img src="img/lang/gb.png"/> English</a></li>
-				            <li><a href="#"><img src="img/lang/de.png"/> Deutsch</a></li>
-				            <li><a href="#"><img src="img/lang/it.png"/> Italiano</a></li>
-			          	</ul>
-			        </li>
-		      	</ul>
-            </div>
-            <!-- /.navbar-collapse -->
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-bullhorn"></i>
+                            <h2>Fresh and Clean</h2>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                            Lorem ipsum dolor sit amet</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-comments"></i>
+                            <h2>Retina ready</h2>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                            Lorem ipsum dolor sit amet</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-cloud-download"></i>
+                            <h2>Easy to customize</h2>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                            Lorem ipsum dolor sit amet</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div><!--/.services-->
+            </div><!--/.row--> 
         </div>
-        <!-- /.container -->
-    </nav>
+    </section><!--/#feature-->
 
-	<!-- Section: intro -->
-    <section id="intro" class="intro">
-	
-		<div class="slogan">
-			<h2>"Pogled DOO" Export-Import </h2>
-			<h4>WE ARE GROUP OF GENTLEMEN MAKING AWESOME WEB WITH BOOTSTRAP</h4>
-		</div>
-		<div class="page-scroll">
-			<a href="#about" class="btn btn-circle">
-				<i class="fa fa-angle-double-down animated"></i>
-			</a>
-		</div>
-    </section>
-	<!-- /Section: intro -->
+    <section id="services" class="service-item">
+	   <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Pogled - Vranje</h2><br>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+        </div><!--/.container-->
+    </section><!--/#services-->
 
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 wow fadeInDown">
+                   <div class="tab-wrap"> 
+                        <div class="media">
+                            <div class="parrent pull-left">
+                                <ul class="nav nav-tabs nav-stacked">
+                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Pouzdanost</a></li>
+                                    <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Sigurnost</a></li>
+                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Bezbednost</a></li>
+                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Profesionalnost</a></li>
+                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Tacnost</a></li>
+                                </ul>
+                            </div>
 
-	<!-- Section: about -->
-    <section id="about" class="home-section text-center" >
-		<div class="heading-about">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="wow bounceInDown" data-wow-delay="0.4s">
-							<div class="section-heading">
-							<h2>O nama</h2>
-							<a href="#services">
-								<i class="fa fa-2x fa-angle-down"></i>
-							</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container">
+                            <div class="parrent media-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade" id="tab1">
+                                        <div class="media">
+                                           <div class="pull-left">
+                                                <img class="img-responsive" src="images/blog/avatar2.png">
+                                            </div>
+                                            <div class="media-body">
+                                                 <h2>Pouzdanost</h2>
+                                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-				<div class="row">
-					<div class="col-lg-2 col-lg-offset-5">
-						<hr class="marginbot-50">
-					</div>
-				</div>
-		        <div class="row">
-		            <div class="col-sm-8 col-md-8">
+                                     <div class="tab-pane fade active in" id="tab2">
+                                        <div class="media">
+                                           <div class="pull-left">
+                                                <img class="img-responsive" src="images/blog/avatar1.png">
+                                            </div>
+                                            <div class="media-body">
+                                                 <h2>Sigurnost</h2>
+                                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.
+                                                 </p>
+                                            </div>
+                                        </div>
+                                     </div>
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi quaerat tempore, odio molestias asperiores aliquid deleniti numquam quae inventore eveniet doloribus laboriosam in, maiores, esse unde necessitatibus dignissimos fuga.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure vitae, inventore soluta, reprehenderit modi quia aliquam culpa, quas voluptates hic perferendis quidem quo molestiae dolorem. Ad, neque ratione delectus aperiam!</p>
+                                     <div class="tab-pane fade" id="tab3">
+                                     <h2>Bezbednost</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+                                     </div>
+                                     
+                                     <div class="tab-pane fade" id="tab4">
+                                     <h2>Profesionalnost</h2>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>
+                                     </div>
 
-							<img src="img/timeline.gif" alt="" class="img-responsive">
-					</div>
+                                     <div class="tab-pane fade" id="tab5">
+                                     <h2>Tacnost</h2>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</p>
+                                     </div>
+                                </div> <!--/.tab-content-->  
+                            </div> <!--/.media-body--> 
+                        </div> <!--/.media-->     
+                    </div><!--/.tab-wrap-->               
+                </div><!--/.col-sm-8-->
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#content-->
 
-		            <div class="col-xs-6 col-sm-3 col-md-3 col-md-offset-1">
-						<div class="wow bounceInUp" data-wow-delay="0.2s">
-		                <div class="team boxed-grey">
-		                    <div class="inner">
-								<h5>Sladjan Bogatinovic</h5>
-		                        <p class="subtitle">Generalni direktor</p>
-		                        <div class="avatar"><img src="img/team/4.jpg" alt="" class="img-responsive img-circle" /></div>
-		                    </div>
-		                </div>
-						</div>
-		            </div>
+    <section id="partner">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Partneri</h2>
+            </div>    
 
-		        </div>		
-			</div>
-		</div>
-	</section>
-	<!-- /Section: about -->
+            <div class="partners">
+                <ul>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/partner1.png"></a></li>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/partner2.png"></a></li>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/partner3.png"></a></li>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/partner4.png"></a></li>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partner5.png"></a></li>
+                </ul>
+            </div>        
+        </div><!--/.container-->
+    </section><!--/#partner-->
 
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
 
-	<!-- Section: servicess -->
-    <section id="services" class="home-section text-center bg-gray">
-		
-		<div class="heading-about">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="wow bounceInDown" data-wow-delay="0.4s">
-						<div class="section-heading">
-						<h2>Usluge</h2>
-						<a href="#partners">
-							<i class="fa fa-2x fa-angle-down"></i>
-						</a>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="onama.html">O nama</a></li>
+                        <li><a href="usluge.html">Usluge i pokrivenost</a></li>
+                        <li><a href="galerija.html">Galerija</a></li>
+                        <li><a href="kontakt.html">Konatakt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
 
-		<div class="container" style="margin-bottom: 50px">
-			<div class="row">
-				<div class="col-lg-2 col-lg-offset-5">
-					<hr class="marginbot-50">
-				</div>
-			</div>
-	        <div class="row">
-				<div class="col-sm-4 col-md-4">
-					<div class="wow fadeInUp" data-wow-delay="0.2s">
-	                <div class="service-box">
-						<div class="service-icon">
-							<img src="img/icons/service-icon-2.png" alt="" />
-						</div>
-						<div class="service-desc">
-							<h5>Pouzdan</h5>
-							<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-						</div>
-	                </div>
-					</div>
-	            </div>
-				<div class="col-sm-4 col-md-4">
-					<div class="wow fadeInUp" data-wow-delay="0.2s">
-	                <div class="service-box">
-						<div class="service-icon">
-							<img src="img/icons/service-icon-3.png" alt="" />
-						</div>
-						<div class="service-desc">
-							<h5>Bezbedan</h5>
-							<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-						</div>
-	                </div>
-					</div>
-	            </div>
-	            <div class="col-sm-4 col-md-4">
-					<div class="wow fadeInLeft" data-wow-delay="0.2s">
-	                <div class="service-box">
-						<div class="service-icon">
-							<img src="img/icons/service-icon-1.png" alt="" />
-						</div>
-						<div class="service-desc">
-							<h5>Brz transport</h5>
-							<p>Vestibulum tin cidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-						</div>
-	                </div>
-					</div>
-	            </div>
-	        </div>		
-		</div>
-		
-		<div class="heading-about">
-			
-			<div class="container" onmouseover="focusCoverage()">
-				<a name="coverage"></a>
-				<!-- Mesto za mapu pokrivenosti-->
-				<div id="regions_div" style="width: 100%; height: 100%; border: 1px solid red;"></div>
-	        </div>
-		</div>
-	</section>
-	<!-- /Section: usluge -->
-
-
-	<!-- Section: partneri -->
-	<section id="partners" class="home-section text-center" style="margin-bottom: 10%">
-		<div class="heading-contact">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="wow bounceInDown" data-wow-delay="0.4s">
-						<div class="section-heading">
-						<h2>Partneri</h2>
-						<a href="#contact">
-							<i class="fa fa-2x fa-angle-down"></i>
-						</a>
-						</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-2 col-lg-offset-5">
-						<hr class="marginbot-50">
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-
-            <div id="slider" class="carousel slide" data-ride="carousel" style="margin-top: 5%">
-
-			  	<!-- Wrapper for slides -->
-			  	<div class="carousel-inner" role="listbox">
-
-				    <div class="item active">
-				    	<div class="row">
-				    		<div class="col-sm-3 col-md-3 col-lg-3">
-				    			<img src="img/slider/1.png" alt="...">
-				    		</div>
-				    		<div class="col-sm-3 col-md-3 col-lg-3">
-				    			<img src="img/slider/2.png" alt="...">
-				    		</div>
-				    		<div class="col-sm-3 col-md-3 col-lg-3">
-				    			<img src="img/slider/3.png" alt="...">
-				    		</div>
-				    		<div class="col-sm-3 col-md-3 col-lg-3">
-				    			<img src="img/slider/4.png" alt="...">
-				    		</div>
-				    	</div>
-				  	</div>
-
-				    <div class="item">
-				    	<div class="row">
-				    		<div class="col-sm-3 col-md-3 col-lg-3">
-				    			<img src="img/slider/5.png" alt="...">
-				    		</div>
-				    		<div class="col-sm-3 col-md-3 col-lg-3">
-				    			<img src="img/slider/6.png" alt="...">
-				    		</div>
-				    		<div class="col-sm-3 col-md-3 col-lg-3">
-				    			<img src="img/slider/7.png" alt="...">
-				    		</div>
-				    		<div class="col-sm-3 col-md-3 col-lg-3">
-				    			<img src="img/slider/8.png" alt="...">
-				    		</div>
-				    	</div>
-				  	</div>
-			  	</div>
-
-			  	<!-- Indicators -->
-			  	<ol class="carousel-indicators" style="top: 95%">
-				    <li data-target="#slider" data-slide-to="0" class="active"></li>
-				    <li data-target="#slider" data-slide-to="1"></li>
-			  	</ol>
-			</div>
-		</div>
-	</section>
-
-
-	<!-- Section: contact -->
-    <section id="contact" class="home-section text-center bg-gray" style="padding-bottom: 12%">
-		<div class="heading-contact">
-			<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="wow bounceInDown" data-wow-delay="0.4s">
-						<div class="section-heading">
-						<h2>Kontakt</h2>
-							<a href="#map">
-								<i class="fa fa-2x fa-angle-down"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-lg-2 col-lg-offset-5">
-				<hr class="marginbot-50">
-			</div>
-		</div>
-
-		<div class="container">
-		    <div class="row">
-		      	<div class="col-lg-12">
-			        <form name="sentMessage" id="contactForm" novalidate>
-			          <div class="row">
-			            <div class="col-md-6">
-			              <div class="form-group has-error">
-			                <input type="text" class="form-control" placeholder="Vase Ime *" id="name" required data-validation-required-message="Please enter your name.">
-			                <p class="help-block text-danger"></p>
-			              </div>
-			              <div class="form-group has-error">
-			                <input type="email" class="form-control" placeholder="Vas Email *" id="email" required data-validation-required-message="Please enter your email address.">
-			                <p class="help-block text-danger"></p>
-			              </div>
-			              <div class="form-group has-error">
-			                <input type="tel" class="form-control" placeholder="Vase Telefon *" id="phone" required data-validation-required-message="Please enter your phone number.">
-			                <p class="help-block text-danger"></p>
-			              </div>
-			            </div>
-			            <div class="col-md-6">
-			              <div class="form-group has-error">
-			                <textarea class="form-control" rows="6" placeholder="Vasa poruka *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-			                <p class="help-block text-danger"></p>
-			              </div>
-			            </div>
-			            <div class="clearfix"></div>
-			            <div class="col-lg-12 text-center">
-			              <div id="success" style="margin-bottom: 30px"></div>
-			              <button type="submit" class="btn btn-skin pull-center" id="btnContanctUs">Posalji poruku</button>
-			            </div>
-			          </div>
-			        </form>
-		      	</div>
-		    </div>
-		</div>
-	</section>
-	<!-- /Section: contact -->
-
-
-	<!-- Section: map -->
-    <section class="home-section text-center" 
-    	style="padding-top: 0px; padding-bottom: 0px">
-		<div class="heading-about" id="map" style="height: 500px">
-		</div>
-	</section>
-	<!-- /Section: map -->
-	
-
-	<footer>
-		<div class="container">
-			<div class="row" style="color: white; margin-top: 15px">
-				      	<div class="col-md-4">
-				        	<h5><i class="fa fa-map-marker"></i> Adresa</h5>
-				        	<p>Partizanski put bb, RS 17500 
-				        	<br/>Vranje, Serbia</p>
-				      	</div>
-				      	<div class="col-md-4">
-					        <h5><i class="fa fa-envelope-o"></i> Email</h5>
-					        <p>pogled.rs@gmail.com </p>
-				      	</div>
-				      	<div class="col-md-4">
-					        <h5><i class="fa fa-phone"></i> Telefon</h5>
-					        +381-17-442-550 <br/>
-					        +381-62-289-867
-					    </div>
-			</div>
-			<div class="wow shake" data-wow-delay="0.4s">
-				<div class="page-scroll marginbot-30">
-					<a href="#intro" id="totop" class="btn btn-circle">
-						<i class="fa fa-angle-double-up animated"></i>
-					</a>
-				</div>
-			</div>
-			<p>&copy;Copyright 2014 - "Pogled DOO". All rights reserved.</p>
-		</div>
-	</footer>
-
-    <!-- Core JavaScript Files -->
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>	
-	<script src="js/jquery.scrollTo.js"></script>
-	<script src="js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/custom.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/prettify.js"></script>
-	<script src="js/application.js"></script>
-	
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
 </body>
 </html>
