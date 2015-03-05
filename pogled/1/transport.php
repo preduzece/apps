@@ -25,9 +25,8 @@
 	$body .= '<p><b>Napomena: </b>'.$_POST['remark'].'</p>';
 
 	$message = Swift_Message::newInstance('Transport')
-      ->setFrom(array('epostar011@gmail.com' => 'Pogled'))
-      ->setTo(array('pogled.rs@gmail.com ', 'milos_dodic@live.com'=> 'Milos Dodic',
-      		'stefanveljkovicvr@gmail.com'=> 'Stefan Veljkovic'))
+      ->setFrom(array('epostar011@gmail.com' => 'Postar'))
+      ->setTo(array('pogled.rs@gmail.com' => 'Pogled'))
       ->setBody($body, 'text/html');
 
     $result = $mailer->send($message);

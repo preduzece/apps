@@ -16,9 +16,8 @@
 	$body .= '<b>Telefon: </b>'.$_POST['phone'].'</p>';
 
 	$message = Swift_Message::newInstance('Kontakt')
-      ->setFrom(array('epostar011@gmail.com' => 'Pogled'))
-      ->setTo(array('pogled.rs@gmail.com ', 'milos_dodic@live.com'=> 'Milos Dodic',
-      		'stefanveljkovicvr@gmail.com'=> 'Stefan Veljkovic'))
+      ->setFrom(array('epostar011@gmail.com' => 'Postar'))
+      ->setTo(array('pogled.rs@gmail.com' => 'Pogled'))
       ->setBody($body, 'text/html')->setReplyTo($_POST['email']);
 
     $result = $mailer->send($message);
@@ -26,5 +25,7 @@
     if ($result == 1) $status = 'Vasa poruka je poslata! ;)';
 	else $status = 'Slanje poruke nije uspelo! :/';
 
-	include 'index.php';
+	echo $status;
+	
+	//include 'index.php';
 ?>
