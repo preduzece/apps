@@ -266,7 +266,7 @@ input.search-form:hover {
   border-radius: 0;
   margin-bottom: 0;
   background: #151515;
-  padding: 15px 0;
+  padding: 0 0;
   padding-bottom: 0;
 }
 
@@ -276,7 +276,7 @@ input.search-form:hover {
 
 .navbar-nav>li{
   margin-left: 35px;
-  padding-bottom: 28px;
+  padding-bottom: 15px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -652,7 +652,7 @@ input.search-form:hover {
 }
 
 #services {
-  background: #000 url(../images/trucks/bg2.jpg);
+  background: #000 url(../images/trucks/bg_services.png) fixed;
   background-size: cover;
 }
 
@@ -1935,7 +1935,7 @@ ul.social_icons li  a i{
 
 .form-group .form-control {
   padding: 7px 12px;
-  border-color:#f2f2f2;
+  border-color:#c52d2f;
   box-shadow: none;
 }
 

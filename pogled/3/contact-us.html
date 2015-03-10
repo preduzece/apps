@@ -130,8 +130,8 @@
                 <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div> 
             <div class="row contact-wrap"> 
-                <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="contact.php">
                     <div class="col-sm-5 col-sm-offset-1">
                         <div class="form-group has-error">
                             <label>Ime *</label>
@@ -143,12 +143,13 @@
                         </div>
                         <div class="form-group has-error">
                             <label>Telefon</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="phone" class="form-control">
                         </div>
                         <div class="form-group has-error">
                             <label>Naziv firme</label>
-                            <input type="text" class="form-control">
-                        </div>                        
+                            <input name="company" type="text" class="form-control">
+                        </div>
+                        <div class="status alert alert-success" style="display: none"></div>                     
                     </div>
                     <div class="col-sm-5">
                         <div class="form-group has-error">
@@ -171,9 +172,9 @@
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget text-center">
+                        <h3>O firmi</h3>
                         <ul>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">We are hiring</a></li>
@@ -184,11 +185,11 @@
                             <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div><!--/.col-md-4-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget text-center">
+                        <h3>Partneri</h3>
                         <ul>
                             <li><a href="#">Faq</a></li>
                             <li><a href="#">Blog</a></li>
@@ -199,26 +200,11 @@
                             <li><a href="#">Billing system</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div><!--/.col-md-4-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Email Marketing</a></li>
-                            <li><a href="#">Plugin Development</a></li>
-                            <li><a href="#">Article Writing</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget text-center">
+                        <h3>Klijenti</h3>
                         <ul>
                             <li><a href="#">Adipisicing Elit</a></li>
                             <li><a href="#">Eiusmod</a></li>
@@ -229,7 +215,7 @@
                             <li><a href="#">Laboris</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div><!--/.col-md-4-->
             </div>
         </div>
     </section><!--/#bottom-->

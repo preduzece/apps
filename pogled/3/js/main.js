@@ -44,16 +44,16 @@ jQuery(function($) {'use strict',
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
 		$.ajax({
+			method: 'post',
+			data: form.serialize(),
 			url: $(this).attr('action'),
-
 			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
+				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Slanje poruke...</p>').fadeIn() );
 			}
 		}).done(function(data){
 			form_status.html('<p class="text-success">' + data.message + '</p>').delay(3000).fadeOut();
 		});
 	});
-
 	
 	//goto top
 	$('.gototop').click(function(event) {

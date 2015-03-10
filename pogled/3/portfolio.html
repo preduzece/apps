@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Portfolio | Corlate</title>
+    <title>Vozni park | Pogled DOO</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -43,8 +43,8 @@
                         <li><a href="index.html">Početna</a></li>
                         <li><a href="about-us.html">O nama</a></li>
                         <li><a href="services.html">Usluge</a></li>
-                        <li><a href="portfolio.html">Vozni park</a></li>
-                        <li class="active"><a href="contact-us.html">Kontakt</a></li> 
+                        <li class="active"><a href="portfolio.html">Vozni park</a></li>
+                        <li><a href="contact-us.html">Kontakt</a></li> 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jezici <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -58,8 +58,8 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-        
     </header><!--/header-->
+
     <section id="portfolio">
         <div class="container">
             <div class="center">
@@ -184,13 +184,67 @@
             </div>
         </div>
     </section><!--/#portfolio-item-->
-    
+
+    <section id="contact-page">
+        <div class="container">
+            <div class="center" id="transport">        
+                <h2>Rezervišite transport</h2>
+                <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div> 
+            <div class="row contact-wrap"> 
+
+                <form id="main-contact-form" class="contact-form" name="contact-form" action="transport.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group has-error">
+                            <label>Polazište *</label>
+                            <input type="text" name="start" class="form-control" required="required">
+                        </div>
+                        <div class="form-group has-error">
+                            <label>Odredište *</label>
+                            <input type="text" name="destin" class="form-control" required="required">
+                        </div>
+                        <div class="form-group has-error">
+                            <label>Datum *</label>
+                            <input type="date" name="date" class="form-control" required="required">
+                        </div>
+                        <div class="form-group has-error">
+                            <label>Kontakt *</label>
+                            <input type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="status alert alert-success" style="display: none"></div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group has-error">
+                            <label>Tip tereta *</label>
+                            <select class="form-control" name="cargo" required>
+                                <option value="Cvrsti teret">Cvrsti teret</option>
+                                <option value="Tekucine">Tekucine</option>
+                                <option value="Gas">Gas</option>
+                            </select>
+                        </div>
+                        <div class="form-group has-error">
+                            <label>Naziv firme</label>
+                            <input type="text" class="form-control" name="company">
+                        </div> 
+                        <div class="form-group has-error">
+                            <label>Napomena</label>
+                            <textarea name="remark" id="remark" class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="form-group has-error">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg">Pošalji</button>
+                        </div>
+                    </div>
+                </form> 
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget text-center">
+                        <h3>O firmi</h3>
                         <ul>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">We are hiring</a></li>
@@ -201,11 +255,11 @@
                             <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div><!--/.col-md-4-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget text-center">
+                        <h3>Partneri</h3>
                         <ul>
                             <li><a href="#">Faq</a></li>
                             <li><a href="#">Blog</a></li>
@@ -216,26 +270,11 @@
                             <li><a href="#">Billing system</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div><!--/.col-md-4-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Email Marketing</a></li>
-                            <li><a href="#">Plugin Development</a></li>
-                            <li><a href="#">Article Writing</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget text-center">
+                        <h3>Klijenti</h3>
                         <ul>
                             <li><a href="#">Adipisicing Elit</a></li>
                             <li><a href="#">Eiusmod</a></li>
@@ -246,7 +285,7 @@
                             <li><a href="#">Laboris</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div><!--/.col-md-4-->
             </div>
         </div>
     </section><!--/#bottom-->
