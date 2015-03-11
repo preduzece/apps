@@ -3,10 +3,8 @@
 
     $name = @trim(stripslashes($_POST['name'])); 
     $email = @trim(stripslashes($_POST['email'])); 
-    $phone = @trim(stripslashes($_POST['phone'])); 
     $company = @trim(stripslashes($_POST['company'])); 
-    $subject = @trim(stripslashes($_POST['subject'])); 
-    $message = @trim(stripslashes($_POST['message'])); 
+    $shipment = @trim(stripslashes($_POST['shipment'])); 
     
     $transporter = Swift_SmtpTransport::
         newInstance('smtp.gmail.com', 465, 'ssl')
@@ -15,24 +13,23 @@
 
     $mailer = Swift_Mailer::newInstance($transporter);
 
-    $body = '<p>'.$message.'</p>';
-    $body .= '<hr/><h3>'.$name.'</h3>';
-    $body .= '<p> <b>Email: </b>'.$email.'<br/>';
-    $body .= '<b>Telefon: </b>'.$phone.'<br/>';
-    $body .= '<b>Firma: </b>'.$company.'</p>';
+    $body = '<h3>'.$company.'</h3><hr/>';
+    $body .= '<p> <b>Tovarni list: </b>'.$shipment.'<br/>';
+    $body .= '<b>Poručilac: </b>'.$name.'<br/>';
+    $body .= '<b>Kontakt: </b>'.$email.'</p>';
 
-    $e_message = Swift_Message::newInstance($subject)
+    $message = Swift_Message::newInstance('Praćenje tovara')
       ->setFrom(array('epostar011@gmail.com' => 'Vas Postar'))
       ->setTo(array('milos_dodic@live.com' => 'Milos Dodic'))
       ->setBody($body, 'text/html')->setReplyTo($email);
 
-    $result = $mailer->send($e_message);
+    $result = $mailer->send($message);
 
     if ($result == 1) $status = array( 'type'=>'success',
-        'message'=>'Primili smo vašu poruku, hvala! :) Uskoro ćemo vas kontaktirati...');
+        'message'=>'Primili smo vaš zahtev, hvala! :) Uskoro ćemo vas kontaktirati...');
 
     else $status = array( 'type'=>'failure',
-        'message'=>'Slanje poruke nije uspelo! :( Pokušajte ponovo kasnije...');
+        'message'=>'Slanje zahteva nije uspelo! :( Pokušajte ponovo kasnije...');
 
     header('Content-type: application/json');
     echo json_encode($status);

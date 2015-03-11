@@ -1935,7 +1935,6 @@ ul.social_icons li  a i{
 
 .form-group .form-control {
   padding: 7px 12px;
-  border-color:#c52d2f;
   box-shadow: none;
 }
 
@@ -2212,7 +2211,7 @@ ul.pagination > li:hover > a {
 }
 
 .form-control:focus {
-  box-shadow:none;
+  border-color: #c52d2f;
   outline: 0 none;
 }
 
