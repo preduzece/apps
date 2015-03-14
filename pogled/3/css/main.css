@@ -1292,23 +1292,23 @@ ul.social_icons li  a i{
 }
 
 .team-bar .first-one-arrow hr {
-  border-bottom: 1px solid #2D7DA4;
-  border-top: 1px solid #2D7DA4;
+  border-bottom: 1px solid #db3615;
+  border-top: 1px solid #db3615;
  }
 
 .team-bar .first-arrow hr {
-  border-bottom: 1px solid #2D7DA4;
-  border-top: 1px solid #2D7DA4;
+  border-bottom: 1px solid #db3615;
+  border-top: 1px solid #db3615;
  }
 
 .team-bar .second-arrow hr {
-  border-bottom: 1px solid #6aa42f;
-  border-top: 1px solid #6aa42f;
+  border-bottom: 1px solid #db3615;
+  border-top: 1px solid #db3615;
 }
 
 .team-bar .third-arrow hr {
-  border-bottom: 1px solid #FFBD20;
-  border-top: 1px solid #FFBD20;
+  border-bottom: 1px solid #db3615;
+  border-top: 1px solid #db3615;
 
 }
 
@@ -1338,17 +1338,17 @@ ul.social_icons li  a i{
 }
 
 .team-bar .first-arrow .fa-angle-up {
-  background:#2D7DA4;
+  background:#db3615;
   margin-left:-33px
  }
 
 .team-bar .second-arrow .fa-angle-down {
-  background:#6AA42F;
+  background:#db3615;
   margin-left: -33px;
 }
 
 .team-bar .third-arrow .fa-angle-up {
-  background:#FFBD20;
+  background:#db3615;
   margin-left: -32px;
 }
 
