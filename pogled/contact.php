@@ -23,7 +23,8 @@
 
     $e_message = Swift_Message::newInstance($subject)
       ->setFrom(array('epostar011@gmail.com' => 'Vas Postar'))
-      ->setTo(array('milos_dodic@live.com' => 'Milos Dodic'))
+      #->setTo(array('milos_dodic@live.com' => 'Milos Dodic'))
+      ->setTo(array('pogled.rs@gmail.com' => 'Pogled DOO'))
       ->setBody($body, 'text/html')->setReplyTo($email);
 
     $result = $mailer->send($e_message);
