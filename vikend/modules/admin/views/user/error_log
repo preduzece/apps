@@ -1,0 +1,1 @@
+[16-Jun-2015 18:37:47 UTC] PHP Fatal error:  Using $this when not in object context in /home/gdezavik/public_html/vikend/modules/admin/views/user/index.php on line 10

@@ -1,0 +1,1 @@
+[16-Jun-2015 18:14:41 UTC] PHP Fatal error:  Class 'yii\console\Controller' not found in /home/gdezavik/public_html/vikend/commands/HelloController.php on line 21

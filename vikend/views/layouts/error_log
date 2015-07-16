@@ -1,0 +1,2 @@
+[16-Jun-2015 18:20:19 UTC] PHP Fatal error:  Class 'app\assets\AppAsset' not found in /home/gdezavik/public_html/vikend/views/layouts/admin.php on line 11
+[16-Jun-2015 18:20:28 UTC] PHP Fatal error:  Class 'app\assets\AppAsset' not found in /home/gdezavik/public_html/vikend/views/layouts/main.php on line 15

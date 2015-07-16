@@ -1,0 +1,2 @@
+[14-Jun-2015 13:00:54 UTC] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home/gdezavik/public_html/tester/views/site/index.php on line 47
+[16-Jun-2015 18:20:33 UTC] PHP Fatal error:  Using $this when not in object context in /home/gdezavik/public_html/vikend/views/site/index.php on line 6

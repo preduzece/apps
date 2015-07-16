@@ -1,0 +1,2 @@
+[16-Jun-2015 18:30:05 UTC] PHP Fatal error:  Class 'yii\db\ActiveRecord' not found in /home/gdezavik/public_html/vikend/models/User.php on line 18
+[16-Jun-2015 18:30:14 UTC] PHP Fatal error:  Class 'yii\base\Object' not found in /home/gdezavik/public_html/vikend/models/UserIdentity.php on line 6
