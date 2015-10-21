@@ -78,6 +78,7 @@ class ObjectsController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 
+
             //Set the path that the file will be uploaded to
             $path = Yii::getAlias('@anyname') .'/';
 
