@@ -41,7 +41,7 @@ class ObjectsSearch extends Objects
      */
     public function search($params)
     {
-        $query = Objects::find()->orderBy('object_created_date DESC');
+        $query = Objects::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

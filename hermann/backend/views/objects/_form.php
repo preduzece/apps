@@ -23,7 +23,6 @@ use backend\models\Expositions;
 
     <?= $form->field($model, 'file')->fileInput() ?>
 
-
     <?= $form->field($model, 'expositions_exposition_id')->dropDownList(
             ArrayHelper::map(Expositions::find()->all(), 'exposition_id', 'exposition_title'),
             ['prompt'=>'Exposition:']

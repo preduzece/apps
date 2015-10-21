@@ -34,7 +34,7 @@ class Objects extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['object_title', 'object_description', 'expositions_exposition_id', 'object_created_date'], 'required'],
+            [['object_title', 'object_description', 'object_link', 'expositions_exposition_id', 'object_created_date'], 'required'],
             [['object_description'], 'string'],
             [['expositions_exposition_id'], 'integer'],
             [['object_created_date'], 'safe'],

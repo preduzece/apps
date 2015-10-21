@@ -31,11 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'exposition_id',
             'exposition_title',
             'exposition_description:ntext',
-            [
-                'attribute'=>'photo',
-                'value'=>"../"."$model->exposition_image",
-                'format' => ['image',['width'=>'300','height'=>'200']],
-            ],
+            'exposition_image',
             'exposition_status',
         ],
     ]) ?>

@@ -52,7 +52,7 @@ use backend\models\Expositions;
       <?php $expositions = Expositions::find()->all(); 
         foreach ($expositions as $exp): ?> 
           <?php if ($exp->exposition_status=='inactive'):?>
-            <div class="row" style="margin-top: 100px">
+            <div class="row" style="margin-top: 150px">
                 <div class="row">
                   <div class="col-md-8 expo-apropos">
                     <div class="apropos-description ">
