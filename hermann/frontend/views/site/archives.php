@@ -24,24 +24,23 @@ use backend\models\Expositions;
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: #191919;">
+      <div class="container" style="background-color: #191919;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" style="background-color: #191919;">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">
-            <img src="images/header-paysalp.png" />
-          </a>
-        </div>
-        <div  class="collapse navbar-collapse">
+            <li><a class="navbar-brand navbar-left" href="#"><img alt="Brand" src="images/header-paysalp.png"></a></li>
+        </div><li><a class="navbar-brand navbar-right" href="#"><img alt="Brand" src="images/logo.png"></a></li>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="<?= Url::to('index.php?r=site/index')?>"> Exposition virtuelle </a></li>
-            <li><a href="<?= Url::to('index.php?r=site/apropos')?>"> A propos de cette exposition </a></li>
-            <li class="active"><a href="<?= Url::to('index.php?r=site/archives')?>"> Expositions précédentes </a></li>            
+            <li ><a href="index.php?r=site/index"> Exposition virtuelle </a></li>
+            <li><a href="index.php?r=site/apropos"> A propos de cette exposition</a></li>
+            <li class="active"><a href="index.php?r=site/archives"> Expositions précédentes</a></li>  
           </ul>
         </div>
       </div>

@@ -60,6 +60,9 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+
+
+
     public function actionOffer($id)
     {
         $offer = Offer::findOne($id);
@@ -67,6 +70,12 @@ class SiteController extends Controller
         return $this->render('offer', [
             'offer' => $offer]);
     }
+
+
+
+
+
+
 
     public function actionIndex()
     {
@@ -85,6 +94,12 @@ class SiteController extends Controller
             'slides' => $slides
         ]);
     }
+
+
+
+
+
+
 
     public function actionOffers($catgry=0)
     {
@@ -118,6 +133,15 @@ class SiteController extends Controller
             'category' => $category,
         ]);
     }
+
+
+
+
+
+
+
+
+
 
     public function actionLogin()
     {

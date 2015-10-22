@@ -87,6 +87,12 @@ class ExpositionsController extends Controller
 
             $model->exposition_image = 'uploads/'.$imageName.'.'.$model->file->extension;
 
+
+
+            if ($model->exposition_status = 'active') {
+                Expositions::updateAll(['exposition_status' => 'inactive'], 'exposition_status = "active"');
+            }
+
             $model->save();
 
 
@@ -125,7 +131,10 @@ class ExpositionsController extends Controller
                 $model->file->saveAs( $path.'uploads/'.$imageName.'.'.$model->file->extension );
                 //save the path to the DB
                 $model->exposition_image = 'uploads/'.$imageName.'.'.$model->file->extension;
-            }            
+            }
+            if ($model->exposition_status = 'active') {
+                Expositions::updateAll(['exposition_status' => 'inactive'], 'exposition_status = "active"');
+            }          
             $model->save();
 
 
