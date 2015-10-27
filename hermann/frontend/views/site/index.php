@@ -60,7 +60,7 @@
                   <div class="nekidiv" >
                       <p class="nekip" >
                           <?=$obj->object_description ?><br>
-                          <a href="<?=$obj->object_link ?> "> Link </a>        
+                          <a href="http://<?=$obj->object_link ?> "> Link </a>        
                       </p>
                   </div>
                 </li>
