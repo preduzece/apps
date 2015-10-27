@@ -79,12 +79,11 @@ class ObjectsController extends Controller
         if ($model->load(Yii::$app->request->post())) {
 
             //Set the path that the file will be uploaded to
-            $path = Yii::getAlias('@anyname') .'/';
+            //$path = Yii::getAlias('@anyname') .'/';
 
             $imageName = $model->object_title;
             $model->file = UploadedFile::getInstance($model, 'file');
-            $model->file->saveAs( $path.'uploads/'.$imageName.'.'.$model->file->extension );
-
+            $model->file->saveAs( 'uploads/'.$imageName.'.'.$model->file->extension );
             $model->object_image = 'uploads/'.$imageName.'.'.$model->file->extension;
 
 
@@ -114,7 +113,7 @@ class ObjectsController extends Controller
         $model = $this->findModel($id);
 
          if ($model->load(Yii::$app->request->post()) ) {
-            $path = Yii::getAlias('@anyname') .'/';
+            //$path = Yii::getAlias('@anyname') .'/';
             //$path2 = Yii::getAlias('@frontend') .'/web/';
             //check if new logo has been browsed or not
             if (UploadedFile::getInstance($model,'file'))
@@ -123,9 +122,7 @@ class ObjectsController extends Controller
                 //get the instance of the uploaded file
                 $imageName = $model->object_title;
                 $model->file =  UploadedFile::getInstance($model,'file');
-                $model->file->saveAs( $path.'uploads/'.$imageName.'.'.$model->file->extension );
-                //$model->file->saveAs( $path2.'uploads/'.$imageName.'.'.$model->file->extension );
-                //save the path to the DB
+                $model->file->saveAs( 'uploads/'.$imageName.'.'.$model->file->extension );
                 $model->object_image = 'uploads/'.$imageName.'.'.$model->file->extension;
             }            
             $model->save();

@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'html',
                 'label' => 'Object image',
                 'value' => function ($data) {
-                    return Html::img('../'.$data->object_image,
+                    return Html::img($data->object_image,
                         ['width' => '100px', 'height' => '60px']);
                 },
             ],

@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'html',
                 'label' => 'Expositon Image',
                 'value' => function ($data) {
-                    return Html::img('../'.$data->exposition_image,
+                    return Html::img($data->exposition_image,
                         ['width' => '100px', 'height' => '60px']);
                 },
             ],

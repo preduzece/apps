@@ -34,7 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'object_title',
             'object_description:ntext',
             'object_link',
-            'object_image',
+            [
+            'attribute'=>'object_image',
+            'value'=>$model->object_image,
+            'format' => ['image',['width'=>'300','height'=>'180']],
+            ],
             'expositions_exposition_id',
             'object_created_date',
         ],

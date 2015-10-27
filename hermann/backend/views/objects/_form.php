@@ -11,6 +11,29 @@ use backend\models\Expositions;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
+
+<script>
+     function showMyImage(fileInput) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {           
+            var file = files[i];
+            var imageType = /image.*/;     
+            if (!file.type.match(imageType)) {
+                continue;
+            }           
+            var img=document.getElementById("thumbnil");            
+            img.file = file;    
+            var reader = new FileReader();
+            reader.onload = (function(aImg) { 
+                return function(e) { 
+                    aImg.src = e.target.result; 
+                }; 
+            })(img);
+            reader.readAsDataURL(file);
+        }    
+    }
+</script>
+
 <div class="objects-form">
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
@@ -21,7 +44,13 @@ use backend\models\Expositions;
 
     <?= $form->field($model, 'object_link')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'file')->fileInput() ?>
+    <?= $form->field($model, 'file', [
+            'inputOptions' => [
+                'onchange' => 'showMyImage(this)',
+            ]
+        ])->fileInput() ?>
+
+    <img  id="thumbnil" style="width:20%; margin-top:10px;"  src="" alt="image"/>
 
     <?= $form->field($model, 'expositions_exposition_id')->dropDownList(
             ArrayHelper::map(Expositions::find()->all(), 'exposition_id', 'exposition_title'),

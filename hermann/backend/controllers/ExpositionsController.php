@@ -79,11 +79,11 @@ class ExpositionsController extends Controller
 
 
             //Set the path that the file will be uploaded to
-            $path = Yii::getAlias('@anyname') .'/';
+            //$path = Yii::getAlias('@anyname') .'/';
 
             $imageName = $model->exposition_title;
             $model->file = UploadedFile::getInstance($model, 'file');
-            $model->file->saveAs( $path.'uploads/'.$imageName.'.'.$model->file->extension );
+            $model->file->saveAs( 'uploads/'.$imageName.'.'.$model->file->extension );
 
             $model->exposition_image = 'uploads/'.$imageName.'.'.$model->file->extension;
 
@@ -91,7 +91,7 @@ class ExpositionsController extends Controller
 
             if ($model->exposition_status = 'active') {
                 Expositions::updateAll(['exposition_status' => 'inactive'], 'exposition_status = "active"');
-            }
+            } 
 
             $model->save();
 
@@ -129,7 +129,6 @@ class ExpositionsController extends Controller
                 $imageName = $model->exposition_title;
                 $model->file =  UploadedFile::getInstance($model,'file');
                 $model->file->saveAs( $path.'uploads/'.$imageName.'.'.$model->file->extension );
-                //save the path to the DB
                 $model->exposition_image = 'uploads/'.$imageName.'.'.$model->file->extension;
             }
             if ($model->exposition_status = 'active') {

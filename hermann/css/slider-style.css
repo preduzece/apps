@@ -210,3 +210,36 @@ h3 > em { display: inline-block !important; color: #c63d4e; width: 1.2em !import
 .t-bold-plus {
  color: #7cc152; 
 }
+
+
+.navbar{
+    background-color: #191919;
+}
+
+.navbar-header{
+     background-color: #191919;
+}
+
+.flexslider{
+    top:118px;
+}
+
+.clone{
+    width: 1027px; float: left; display: block;
+}
+
+.bg-black{
+    width: 400px; height: 720px; top: 0px; left: 0px; display: none;
+}
+
+.nekih2{
+    top: 20%; left: 3.5%; color: white; display: none;
+}
+
+.nekidiv{
+    top: 28%; left: 4.5%; display: none;
+}
+
+.nekip{
+    width: 20%; color: white; white-space: normal;  font-size: 13px;
+}

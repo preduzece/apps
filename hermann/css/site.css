@@ -10,6 +10,10 @@ body {
     padding: 0 0 60px;
 }
 
+.container{
+    background-color: #191919;
+}
+
 .wrap > .container {
     padding: 70px 15px 20px;
 }
@@ -89,3 +93,5 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+

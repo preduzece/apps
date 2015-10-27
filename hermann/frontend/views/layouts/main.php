@@ -28,17 +28,26 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => Html::img('images/header-paysalp.png', ['alt'=>Yii::$app->name]),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
+    ?>
+    <li><a class="navbar-brand navbar-right" href="#"><img alt="Brand" src="images/logo.png"></a></li>
+    <?php 
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+
+
+
+        ['label' => 'Exposition virtuelle', 'url' => ['/site/index']],
+        ['label' => 'A propos de cette exposition', 'url' => ['/site/apropos']],
+        ['label' => 'Expositions précédentes', 'url' => ['/site/archives']],
     ];
+
+
+
     
     // if (Yii::$app->user->isGuest) {
     //     $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -55,6 +64,8 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);
+
+
     NavBar::end();
     ?>
 
