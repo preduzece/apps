@@ -12,5 +12,4 @@ $mailGun->sendMessage($domain, array('from'    => 'office@pogled.co.rs',
                                 'to'      => 'milos_dodic@live.com',
                                 'subject' => 'The PHP SDK is awesome!',
                                 'text'    => 'It is so simple to send a message.'));
-
 ?>
