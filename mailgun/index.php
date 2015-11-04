@@ -9,10 +9,13 @@ $message = 'It is so simple to send a message.';
 $domain = "gdezavikend.rs";
 
 # Now, compose and send your message.
-$mailGun->sendMessage($domain, array('from'    => 'office@gdezavikend.rs',
-                                'to'      => 'milos_dodic@live.com',
-                                'subject' => 'The PHP SDK is awesome!',
-                                'text'    => $message));
+$mailGun->sendMessage($domain, [
+    'from'    => 'office@gdezavikend.rs',
+    'to'      => 'milos_dodic@live.com',
+    'subject' => 'The PHP SDK is awesome!',
+    'text'    => $message
+    ]
+);
 
 var_dump($mailGun); die();
 ?>
