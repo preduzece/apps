@@ -1,17 +1,16 @@
 
 <?php 
 
-	require_once 'lib/swift_required.php';
-	
-	$transporter = Swift_SmtpTransport::
-		newInstance('smtp.gmail.com', 465, 'ssl')
-			->setUsername('epostar011')
-			->setPassword('lozinka011');
+    require 'vendor/autoload.php';
+    use Mailgun\Mailgun;
 
-	$mailer = Swift_Mailer::newInstance($transporter);
+    # First, instantiate the SDK with your API credentials and define your domain.
+    $mailGun = new Mailgun("key-d614c175cd653e6144c227224ceb685e");
+    // $message = 'It is so simple to send a message.';
+    $domain = "pogled.co.rs";
 
-	$body = '<h3>'.$_POST['client'].' <small>'.$_POST['contact'].'</small></h3>';
-	$body .= '<table border="1" color="#e33825">
+	$content = '<h3>'.$_POST['company'].' <small>('.$_POST['email'].')</small></h3>';
+	$content .= '<table border="1" color="#e33825">
 		<tr>
 			<th>Polaziste</th><th>Odrediste</th><th>Teret</th><th>Firma</th><th>Datum</th>
 		</tr>
@@ -20,23 +19,28 @@
 			.$_POST['cargo'].'</td><td>'.$_POST['company'].'</td><td>'.$_POST['date'].'</td>
 		</tr>
 	</table>';
-	$body .= '<p><b>Napomena: </b>'.$_POST['remark'].'</p>';
+	$content .= '<p><b>Napomena: </b>'.$_POST['remark'].'</p>';
 
-	$message = Swift_Message::newInstance('Transport')
-      // ->setFrom(array('epostar011@gmail.com' => 'Vas Postar'))
-      ->setTo(array('milos_dodic@live.com' => 'Milos Dodic'))
-      ->setTo(array('pogled.rs@gmail.com' => 'Pogled DOO'))
-      ->setBody($body, 'text/html');
+    $status = array( 'type'=>'failure',
+            'message'=>'Slanje poruke nije uspelo! :( Pokušajte ponovo kasnije...');
 
-    $result = $mailer->send($message);
+    try{
+        # Now, compose and send your message.
+        $mailGun->sendMessage($domain, [
+            'from'    => 'cargo@pogled.co.rs',
+            'to'      => 'dmilos91@gmail.com',
+            'subject' => 'Pracenje tovara',
+            'html'    => $content,
+            ]
+        );
 
-    if ($result == 1) $status = array( 'type'=>'success',
-        'message'=>'Primili smo vašu poruku, hvala! :) Uskoro ćemo vas kontaktirati...');
-
-    else $status = array( 'type'=>'failure',
-        'message'=>'Slanje poruke nije uspelo! :( Pokušajte ponovo kasnije...');
+        $status = array( 'type'=>'success',
+            'message'=>'Primili smo vašu poruku, hvala! :) Uskoro ćemo vas kontaktirati...');
+    } catch(Exception $exc) {
+        $status = array( 'type'=>'failure',
+            'message'=>'Slanje poruke nije uspelo! :( Pokušajte ponovo kasnije...');
+    }
 
     header('Content-type: application/json');
-    echo json_encode($status);
-    die();
+    echo json_encode($status); die();
 ?>
