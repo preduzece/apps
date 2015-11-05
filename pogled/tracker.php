@@ -25,8 +25,9 @@
         # Now, compose and send your message.
         $mailGun->sendMessage($domain, [
             'from'    => 'tracking@pogled.co.rs',
-            'to'      => 'office@pogled.co.rs',
-            // 'to'      => 'dmilos91@gmail.com',
+            'to'      => 'pogled.rs@gmail.com',
+            // 'to'      => 'office@pogled.co.rs',
+            // 'to'      => 'milos_dodic@live.com',
             'subject' => 'Pracenje tovara',
             'html'    => $content,
             ]
