@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Expositions', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Créer une Exposition', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -42,10 +42,10 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'exposition_image',
                 'format' => 'html',
-                'label' => 'Expositon Image',
+                'label' => 'Image',
                 'value' => function ($data) {
                     return Html::img($data->exposition_image,
-                        ['width' => '100px', 'height' => '60px']);
+                        ['width' => '100px', 'height' => '60px', 'alt' => 'No image upload']);
                 },
             ],
             'exposition_status',

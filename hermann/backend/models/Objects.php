@@ -34,7 +34,7 @@ class Objects extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['object_title', 'object_description', 'object_link', 'expositions_exposition_id', 'object_created_date'], 'required'],
+            [['object_title', 'object_description', 'expositions_exposition_id', 'object_created_date'], 'required'],
             [['object_description'], 'string'],
             [['expositions_exposition_id'], 'integer'],
             [['object_created_date'], 'safe'],
@@ -49,13 +49,13 @@ class Objects extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'object_id' => 'Object ID',
-            'object_title' => 'Object Title',
-            'object_description' => 'Object Description',
-            'object_link' => 'Object Link',
-            'file' => 'Object Image',
-            'expositions_exposition_id' => 'Expositions Exposition ID',
-            'object_created_date' => 'Object Created Date',
+            'object_id' => 'ID',
+            'object_title' => 'Titre',
+            'object_description' => 'Description',
+            'object_link' => 'Lien',
+            'file' => 'Image',
+            'expositions_exposition_id' => 'Exposition',
+            'object_created_date' => 'Date de création',
         ];
     }
 

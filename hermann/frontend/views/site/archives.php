@@ -1,5 +1,6 @@
 <?php 
 use yii\helpers\Url;
+use yii\helpers\Html;
 use backend\models\Expositions;
 ?>
 
@@ -29,7 +30,7 @@ use backend\models\Expositions;
       <?php $expositions = Expositions::find()->all(); 
         foreach ($expositions as $exp): ?> 
           <?php if ($exp->exposition_status=='inactive'):?>
-            <div class="row" style="margin-top: 150px">
+            <div class="row" style="margin-top: 120px">
                 <div class="row">
                   <div class="col-md-8 expo-apropos">
                     <div class="apropos-description ">
@@ -37,7 +38,7 @@ use backend\models\Expositions;
                       <p><?=$exp->exposition_description ?></p>
                       <span class="glyphicon glyphicon-camera">
                       </span> 
-                    <a href="#"><?=$exp->exposition_title ?></a>
+                    <a href="<?= Url::to(['site/index', 'exposition_id' => $exp->exposition_id]) ?>"><?=$exp->exposition_title ?></a>
                     </div>
                     <div class="apropos-description-img">
                       <img src='<?="admin/". $exp->exposition_image ?>'  style="height:250px">

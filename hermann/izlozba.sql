@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2015 at 11:44 AM
+-- Generation Time: Oct 28, 2015 at 05:24 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -133,7 +133,7 @@ INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_res
 -- Constraints for table `objects`
 --
 ALTER TABLE `objects`
-  ADD CONSTRAINT `objects_ibfk_1` FOREIGN KEY (`expositions_exposition_id`) REFERENCES `expositions` (`exposition_id`);
+  ADD CONSTRAINT `objects_ibfk_1` FOREIGN KEY (`expositions_exposition_id`) REFERENCES `expositions` (`exposition_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

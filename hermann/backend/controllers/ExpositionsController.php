@@ -82,16 +82,27 @@ class ExpositionsController extends Controller
             //$path = Yii::getAlias('@anyname') .'/';
 
             $imageName = $model->exposition_title;
+
             $model->file = UploadedFile::getInstance($model, 'file');
             $model->file->saveAs( 'uploads/'.$imageName.'.'.$model->file->extension );
-
             $model->exposition_image = 'uploads/'.$imageName.'.'.$model->file->extension;
 
 
 
-            if ($model->exposition_status = 'active') {
-                Expositions::updateAll(['exposition_status' => 'inactive'], 'exposition_status = "active"');
-            } 
+            switch ($model->exposition_status) {
+                case 'active':
+                    Expositions::updateAll(['exposition_status' => 'inactive'], 'exposition_status = "active"');
+                    $model->exposition_status="active";
+                    break;
+                case 'inactive':
+                    $model->exposition_status="inactive";
+                    break;
+                
+                default:
+                    $model->exposition_status="inactive";
+                    break;
+            }
+
 
             $model->save();
 
@@ -126,10 +137,11 @@ class ExpositionsController extends Controller
             {
                 
                 //get the instance of the uploaded file
-                $imageName = $model->exposition_title;
-                $model->file =  UploadedFile::getInstance($model,'file');
-                $model->file->saveAs( $path.'uploads/'.$imageName.'.'.$model->file->extension );
-                $model->exposition_image = 'uploads/'.$imageName.'.'.$model->file->extension;
+            $imageName = $model->exposition_title;
+
+            $model->file = UploadedFile::getInstance($model, 'file');
+            $model->file->saveAs( 'uploads/'.$imageName.'.'.$model->file->extension );
+            $model->exposition_image = 'uploads/'.$imageName.'.'.$model->file->extension;
             }
             if ($model->exposition_status = 'active') {
                 Expositions::updateAll(['exposition_status' => 'inactive'], 'exposition_status = "active"');
@@ -156,6 +168,7 @@ class ExpositionsController extends Controller
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+        
 
         $this->findModel($id)->delete();
 
