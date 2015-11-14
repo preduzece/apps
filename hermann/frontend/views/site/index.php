@@ -60,7 +60,6 @@ use yii\helpers\Url;
                           <?php if ($obj->object_link!=""):?>
                               <a href="http://<?=$obj->object_link ?> " target="_blank"> En savoir plus </a>
                             <?php endif; ?>
-                          ?>
                       </p>
                   </div>
                 </li>
