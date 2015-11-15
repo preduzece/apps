@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\Slide;
 use app\models\Video;
 use app\models\Catgry;
+use app\models\Nletter;
 
 use app\models\Article;
 use app\models\ArticleSearch;
@@ -74,10 +75,12 @@ class SiteController extends Controller
 
     public function actionArticle($id)
     {
-        $model = Article::findOne($id);
+        return $this->redirect(['index']);
 
-        return $this->render('article', [
-            'model' => $model]);
+//        $model = Article::findOne($id);
+//
+//        return $this->render('article', [
+//            'model' => $model]);
     }
 
     public function actionBlog()
@@ -228,6 +231,28 @@ class SiteController extends Controller
                 echo "Requested data format is unavailible at the moment...";
                 break;
         }
+    }
+
+    public function actionSignup()
+    {
+        $model = new Nletter();
+
+        if ( Yii::$app->request->isPost ){
+            $model->load(Yii::$app->request->post());
+            $model->created = date('Y-m-d H:i:s');
+
+            if(Nletter::find()->where(
+                ['email' => $model->email])->exists()){
+                $model->addError('email',
+                                 'Već ste se prijavili za obaveštenja, hvala!');
+                // var_dump($model); die;
+            } else {
+                $model->save();
+            }
+
+        }
+
+        return $this->redirect(['index']);
     }
 
     public function actionLogout()

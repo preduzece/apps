@@ -251,8 +251,19 @@ AppAsset::register($this);
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="companyinfo">
-                            <img class="img-responsive" src="<?= Url::base() ?>/img/home/baner.png" alt="gde za vikend logo">
+                            <img class="img-responsive" src="<?= Url::base() ?>/img/home/baner.png" alt="gdezavikend.rs">
                         </div>
+                        <?php $form = ActiveForm::begin([ 'action' => ['site/signup'],
+                            'options' => ['class' => 'form-inline']]); ?>
+
+                            Prijava za obaveštenja o novim ponudama
+                            <div class="form-group" style="padding-top: 15px">
+                                <input type="email" name="Nletter[email]" class="form-control" placeholder="Vasa email adresa...">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Prijavite se</button>
+                        <?php ActiveForm::end(); ?>
+
                     </div>
 
                     <div class="col-sm-8">
@@ -265,7 +276,8 @@ AppAsset::register($this);
                                     foreach ($categories as $category): ?> 
                                         
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="<?= Url::to(['site/offers', 'catgry' => $category->id]) ?>"><?= $category->name ?></a></li>
+                                        <li><a href="<?= Url::to(['site/offers', 'catgry' => $category->id]) ?>">
+                                            <?= $category->name ?></a></li>
                                     </ul>
                                     
                                     <?php endforeach ?>
