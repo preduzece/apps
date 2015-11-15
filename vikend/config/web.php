@@ -63,8 +63,13 @@ $config = [
     ],
     'modules' => [
         'adminpanel' => [
+            'layout' => 'admin',
             'defaultRoute' => 'panel',
             'class' => 'app\modules\admin\Module',
+        ],
+        'blog' => [
+            'layout' => 'blog',
+            'class' => 'app\modules\blog\Module',
         ],
         'client' => [
             'class' => 'app\modules\client\Module',

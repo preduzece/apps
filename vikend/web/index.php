@@ -1,7 +1,8 @@
 <?php
 
 defined('USER') or define('USER', 1);
-defined('ADMIN') or define('ADMIN', 2);
+defined('WRITER') or define('WRITER', 2);
+defined('ADMIN') or define('ADMIN', 3);
 
 // comment out the following two lines when deployed to production
 if ($_SERVER['HTTP_HOST'] == 'localhost') {

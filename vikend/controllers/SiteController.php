@@ -8,7 +8,11 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 
 use app\models\Slide;
+use app\models\Video;
 use app\models\Catgry;
+
+use app\models\Article;
+use app\models\ArticleSearch;
 
 use app\models\Offer;
 use app\models\OfferSearch;
@@ -60,22 +64,47 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-
-
-
     public function actionOffer($id)
     {
-        $offer = Offer::findOne($id);
+        $model = Offer::findOne($id);
 
         return $this->render('offer', [
-            'offer' => $offer]);
+            'model' => $model]);
     }
 
+    public function actionArticle($id)
+    {
+        $model = Article::findOne($id);
 
+        return $this->render('article', [
+            'model' => $model]);
+    }
 
+    public function actionBlog()
+    {
+        $searchModel = new ArticleSearch();
+        $dataProvider = $searchModel->search(
+            Yii::$app->request->queryParams);
 
+        return $this->render('blog', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
+    public function actionGallery()
+    {
+        $model = Video::find();
 
+        $dataProvider = new ActiveDataProvider([
+            'pagination' => false,
+            'query' => $model,
+        ]);
+
+        return $this->render('gallery', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
     public function actionIndex()
     {
@@ -94,12 +123,6 @@ class SiteController extends Controller
             'slides' => $slides
         ]);
     }
-
-
-
-
-
-
 
     public function actionOffers($catgry=0)
     {
@@ -134,21 +157,8 @@ class SiteController extends Controller
         ]);
     }
 
-
-
-
-
-
-
-
-
-
     public function actionLogin()
     {
-        if (!\Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) 
             && $model->login()) {

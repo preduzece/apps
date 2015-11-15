@@ -25,19 +25,23 @@ use yii\helpers\Url;
         <p style="text-center"><h3>Ponude</h3></p>
     </div>
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
-        <a href="<?= Url::toRoute('/adminpanel/user') ?>" style="font-size: 100px"><span class="glyphicon glyphicon-user"></span></a>
-        <p style="text-center"><h3>Korisnici</h3></p>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
         <a href="<?= Url::toRoute('/adminpanel/comnt') ?>" style="font-size: 100px"><span class="glyphicon glyphicon-envelope"></span></a>
         <p style="text-center"><h3>Komentari</h3></p>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+    <!-- <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
         <a href="<?= Url::toRoute('/adminpanel/order') ?>" style="font-size: 100px"><span class="glyphicon glyphicon-book"></span></a>
         <p style="text-center"><h3>Porudzbe</h3></p>
+    </div> -->
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+        <a href="<?= Url::toRoute('/adminpanel/video') ?>" style="font-size: 100px"><span class="glyphicon glyphicon-camera"></span></a>
+        <p style="text-center"><h3>Video</h3></p>
     </div>
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
         <a href="<?= Url::toRoute('/adminpanel/slide') ?>" style="font-size: 100px"><span class="glyphicon glyphicon-picture"></span></a>
         <p style="text-center"><h3>Slider</h3></p>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+        <a href="<?= Url::toRoute('/adminpanel/user') ?>" style="font-size: 100px"><span class="glyphicon glyphicon-user"></span></a>
+        <p style="text-center"><h3>Korisnici</h3></p>
     </div>
 </div>
