@@ -36,7 +36,7 @@ and open the template in the editor.
                                     <ul class="nav nav-pills">
                                         <li><a href=""><i class="fa fa-home"> Pocetna |</i></a></li>
                                         <li><a href=""><i class="fa fa-globe"> Ponuda |</i></a></li>
-                                        <li><a href=""><i class="fa fa-mobile"> O nama |</i></a></li>
+                                        <li><a href=""><i class="fa fa-user"> O nama |</i></a></li>
                                         <li><a href=""><i class="fa fa-phone"> Kontakt</i></a></li>
                                     </ul>
                                 </div>

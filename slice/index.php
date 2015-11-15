@@ -21,7 +21,7 @@ $content = '<!--recommended_items--><br><br>
 <div class="features_items"><!--features_items-->
     <h2 class="title text-center">Top 3 preporuka gde za vikend</h2>
     <div class="col-sm-4">
-        <div class="product-image-wrapper">
+        <div class="product-image-wrapper" style="box-shadow: 2px 2px 2px silver;">
             <div class="single-products">
                 <div class="productinfo text-center">
                     <img src="images/offers/1.jpg" alt="" />
@@ -32,8 +32,8 @@ $content = '<!--recommended_items--><br><br>
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
-        <div class="product-image-wrapper">
+    <div class="col-sm-4" >
+        <div class="product-image-wrapper" style="box-shadow: 2px 2px 2px silver;">
             <div class="single-products">
                 <div class="productinfo text-center">
                     <img src="images/offers/5.jpg" alt="" />
@@ -45,7 +45,7 @@ $content = '<!--recommended_items--><br><br>
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="product-image-wrapper">
+        <div class="product-image-wrapper" style="box-shadow: 2px 2px 2px silver;" >
             <div class="single-products">
                 <div class="productinfo text-center">
                     <img src="images/offers/6.jpg" alt="" />

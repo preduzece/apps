@@ -12,9 +12,8 @@ body {
   position: relative;
   font-weight:400px;
 }
+
 body{
-
-
     background: #EEE url("../images/desna.jpg") no-repeat scroll left top;
     background-color: #EEE;
     background-image: url("../images/desna.jpg");
@@ -84,7 +83,9 @@ a#scrollUp i{
 **************************/
 
 .header_top {
+  padding-top: 8px;
   background: none repeat scroll 0 0 #F0F0E9;
+  height: 50px;
 }
 
 .contactinfo ul li:first-child{
