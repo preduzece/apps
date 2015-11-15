@@ -55,4 +55,14 @@ class User extends \yii\db\ActiveRecord
             'added' => 'Added',
         ];
     }
+
+    public function beforeSave($insert){
+        if (parent::beforeSave($insert)) {
+            $this->pswd = Yii::$app->getSecurity()
+                ->generatePasswordHash($this->pswd);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

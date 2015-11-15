@@ -69,6 +69,8 @@ AppAsset::register($this);
 
     <div id="fb-root"></div>
     <script>
+
+    // LOCAL
       <?php if ($_SERVER['HTTP_HOST'] == 'localhost'): ?>
       window.fbAsyncInit = function() {
         FB.init({
@@ -77,6 +79,8 @@ AppAsset::register($this);
           version    : 'v2.4'
         });
       };
+
+    // SERVER
       <?php else: ?>
       window.fbAsyncInit = function() {
         FB.init({
@@ -209,11 +213,25 @@ AppAsset::register($this);
 
                         </div><!--/category-products-->
 
-                        <div class="fb-like" data-share="true" data-width="230" data-show-faces="true"> </div>
+                        <!--<div class="fb-like" data-share="true" data-width="230" data-show-faces="true"> </div>-->
+
+                        <div class="fb-page" data-href="https://www.facebook.com/gdezavikend.rs" data-small-header="false"
+                             data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
+                             data-show-posts="false">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/gdezavikend.rs">
+                                    <a href="https://www.facebook.com/gdezavikend.rs">gdezavikend.rs</a>
+                                </blockquote>
+                            </div>
+                        </div>
 
                         <div class="text-center" style="margin-bottom: 20px"><!--baneri-->
-                            <a href="http://bit.ly/1TNfKCu" target="_blank"><img class="img-responsive" src="<?= Url::base() ?>/img/home/mlgbaner.jpg" alt="Igraonica"/></a><br>
-                            <a href="http://bit.ly/1LuqkvA" target="_blank"><img class="img-responsive" src="<?= Url::base() ?>/img/home/cvecarabaner.jpg" alt="cvecara" /></a>
+                            <a href="http://bit.ly/1TNfKCu" target="_blank">
+                                <img class="img-responsive" src="<?= Url::base() ?>/img/home/mlgbaner.jpg" alt="Igraonica"/>
+                            </a><br>
+                            <a href="http://bit.ly/1LuqkvA" target="_blank">
+                                <img class="img-responsive" src="<?= Url::base() ?>/img/home/cvecarabaner.jpg" alt="Cvecara"/>
+                            </a>
                         </div><!--/baneri-->
 
                     </div>
