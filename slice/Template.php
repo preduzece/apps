@@ -20,10 +20,14 @@ and open the template in the editor.
 
     <body>
         <section>
+
             <header id="header "><!--header-->
+
                 <div class="header_top navbar-fixed-top"><!--header_top-->
                     <div class="container ">
+            
                         <div class="row fixed-top">
+                        <!-- <img  style="text-center"  src="images/topbanner.png"> -->
                             <div class="col-sm-2">
                                 <div class="contactinfo">
                                     <ul class="nav nav-pills ">
@@ -58,10 +62,10 @@ and open the template in the editor.
                             </div>
                         </div>
                     </div>
+
                 </div><!--/header_top-->
             </header>
-        </section>    <br><br><br>
-
+        </section>    <br><br><br><br><br><br>
 
 
         <section>
@@ -123,9 +127,16 @@ and open the template in the editor.
                                 </div>
                             </div><!--/category-products-->
 
+                            <br><h2>Newsletter</h2><br>
+                            <div class=" text-center"><!--shipping-->
+                                <img src="images/newsletter.png" alt="" height="150px" /><br><br>
+                                <form>
+                                    <input type="text" name="naziv" class="form-control" placeholder="Vaša e-mail adresa"><br>
+                                    <button type="submit" class="btn btn-primary">Prijavi se</button><br>
+                                </form>
+                            </div><!--/shipping-->
 
-
-                            <br><h2>Pratite nas na FB</h2>
+                            <br><br><h2>Pratite nas na FB</h2>
                             <div class="shipping text-center"><!--shipping-->
                                 <img src="images/home/shipping.jpg" alt="" />
                             </div><!--/shipping-->
@@ -141,73 +152,79 @@ and open the template in the editor.
             </div>
         </section>
 
+        <div class="container">
+            <footer id="footer"><!--Footer-->
+                <div class="footer-widget">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="companyinfo">
+                                    <img src="images/home/umestomapu.png" alt="gde  za vikend logo">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="single-widget companyinfo">
 
-        <footer id="footer"><!--Footer-->
-            <div class="footer-widget">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="companyinfo">
-                                <img src="images/home/umestomapu.png" alt="gde  za vikend logo">
+                                    <h2>Servisi</h2>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="#">Gde za vikend servis</a></li>
+                                        <li><a href="#">Android aplikacija</a></li>
+                                        <li><a href="#">IOS aplikacija</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="single-widget companyinfo">
+                            <div class="col-sm-2">
+                                <div class="single-widget companyinfo">
+                                    <h2>Informacije</h2>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="#">O nama</a></li>
+                                        <li><a href="#">Kontakt</a></li>
+                                        <li><a href="#">Marketing</a></li>
+                                        <li><a href="#">Prijatelji sajta</a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                                <h2>Servisi</h2>
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Gde za vikend servis</a></li>
-                                    <li><a href="#">Android aplikacija</a></li>
-                                    <li><a href="#">IOS aplikacija</a></li>
-                                </ul>
+                            <div class="col-sm-2">
+                                <div class="single-widget companyinfo">
+                                    <h2>Zabava</h2>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="#">Online Help</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Order Status</a></li>
+                                        <li><a href="#">Change Location</a></li>
+                                        <li><a href="#">FAQ’s</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="single-widget companyinfo">
-                                <h2>Informacije</h2>
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">O nama</a></li>
-                                    <li><a href="#">Kontakt</a></li>
-                                    <li><a href="#">Marketing</a></li>
-                                    <li><a href="#">Prijatelji sajta</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-2">
-                            <div class="single-widget companyinfo">
-                                <h2>Zabava</h2>
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Online Help</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Order Status</a></li>
-                                    <li><a href="#">Change Location</a></li>
-                                    <li><a href="#">FAQ’s</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="single-widget companyinfo">
-                                <h2>Uputstva i uslovi</h2>
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Najcesca pitanja</a></li>
-                                    <li><a href="#">Uslovi koriscenja</a></li>
-                                </ul>
+                            <div class="col-sm-2">
+                                <div class="single-widget companyinfo">
+                                    <h2>Uputstva i uslovi</h2>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="#">Najcesca pitanja</a></li>
+                                        <li><a href="#">Uslovi koriscenja</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                
+
+            </footer>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="row">
+                <p class="pull-left">Copyright © gdezavikend.rs</p>
+                <p class="pull-right">Designed by <span><a target="_blank" href="http://www.gdezavikend.rs">gdezavikend.rs</a></span></p>
             </div>
+        </div>
 
 
-            <div class="footer-bottom">
-                    <div class="row">
-                        <p class="pull-left">Copyright © gdezavikend.rs</p>
-                        <p class="pull-right">Designed by <span><a target="_blank" href="http://www.gdezavikend.rs">gdezavikend.rs</a></span></p>
-                    </div>
-            </div>
-
-        </footer>
+        
 
 
 

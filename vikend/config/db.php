@@ -7,6 +7,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost')
 	    'username' => 'root', 'password' => '',
 	    'charset' => 'utf8',
 	];
+
 else 
 	return [
 	    'class' => 'yii\db\Connection',
