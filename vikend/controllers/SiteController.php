@@ -82,14 +82,16 @@ class SiteController extends Controller
 
     public function actionBlog()
     {
-        $searchModel = new ArticleSearch();
-        $dataProvider = $searchModel->search(
-            Yii::$app->request->queryParams);
+        return $this->redirect(['index']);
 
-        return $this->render('blog', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+//        $searchModel = new ArticleSearch();
+//        $dataProvider = $searchModel->search(
+//            Yii::$app->request->queryParams);
+//
+//        return $this->render('blog', [
+//            'searchModel' => $searchModel,
+//            'dataProvider' => $dataProvider,
+//        ]);
     }
 
     public function actionGallery()

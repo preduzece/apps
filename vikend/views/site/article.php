@@ -34,7 +34,7 @@ use yii\helpers\Html;
 		FB.ui({
 		  method: 'feed',
 		  title: 'Gde Za Vikend | Blog | <?= $model->title ?>',
-		  caption: 'Gde Za Vikend | Article: <?= $model->title ?> | Author: <?= $model->author ?>',
+		  name: 'Gde Za Vikend | Article: <?= $model->title ?> | Author: <?= $model->author ?>',
 		  picture: '<?= Url::base() ?>/img/articles/<?= $model->image ?>',
 		  description: '<?= substr($model->text, 0, 96) ?>...',
 		  link: '<?= Url::current() ?>'

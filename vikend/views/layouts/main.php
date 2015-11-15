@@ -141,7 +141,7 @@ AppAsset::register($this);
                                 <li><a href="<?= Url::to(['site/index']) ?>">Početna</a></li>
                                 <li><a href="<?= Url::to(['site/offers']) ?>">Ponude</a></li> 
                                 <li><a href="<?= Url::to(['site/gallery']) ?>">Galerija</a></li>
-                                <li><a href="<?= Url::to(['site/blog']) ?>">Blog</a></li>
+                                <!--<li><a href="<?php // echo Url::to(['site/blog']) ?>">Blog</a></li>-->
                                 <li><a href="<?= Url::to(['site/about']) ?>">O nama</a></li> 
                                 <li><a href="<?= Url::to(['site/contact']) ?>">Kontakt</a></li>
                             </ul>
