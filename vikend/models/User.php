@@ -120,7 +120,9 @@ class User extends \yii\db\ActiveRecord
      */
     public function validatePassword($password)
     {
-        return $this->pswd === $password;
+        return Yii::$app->getSecurity()
+            ->validatePassword($password, $this->pswd);
+        // return $this->pswd === $password;
     }
 
     /**
