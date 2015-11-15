@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../js/jquery.js"></script>
+	<script src="js/jquery.zaccordion.js"></script>
+	<script src="../js/jquery.js"></script>
+
+	<script>
+		$(document).ready(function() {
+		$("#featured").zAccordion({
+		easing: 'easeOutBounce',
+		timeout: 5500,
+		slideWidth: 600,
+		width: 900,
+		height: 310
+		});
+		});
+	</script>
+</head>
+<body>
+	<ul id="featured">
+<li>
+<image src="../images/offers/1.jpg" alt="Old School Diner" />
+</li>
+<li>
+<image src="../images/offers/2.jpg" alt="Vintage Pool" />
+</li>
+<li>
+<image src="../images/offers/3.jpg" alt="Retro Gas Pump" />
+</li>
+<li>
+<image src="../images/offers/4.jpg" alt="Old Car Steering Wheel" />
+</li>
+</ul>
+
+</body>
+
+</html>
