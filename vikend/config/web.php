@@ -6,24 +6,25 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'defaultRoute' => '/site/index',
+    'defaultRoute' => '/site/index.php',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'AnuCUQfiDWARXAv6MrEmqhz268qv_Gqn',
         ],
 
-        'urlManager' => [
-            'showScriptName' => false,   // Disable index.php
-            'enablePrettyUrl' => true,   // Disable r= routes
 
-            'rules' => [
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-            ],
-            // ...
-        ],
+        // 'urlManager' => [
+        //     'showScriptName' => false,   // Disable index.php
+        //     'enablePrettyUrl' => true,   // Disable r= routes
+
+        //     'rules' => [
+        //         '<controller:\w+>/<id:\d+>' => '<controller>/view',
+        //         '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+        //         '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+        //     ],
+        //     // ...
+        // ],
 
         'cache' => [
             'class' => 'yii\caching\FileCache',
