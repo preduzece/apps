@@ -47,4 +47,6 @@ class Catgry extends \yii\db\ActiveRecord
             'added' => 'Added',
         ];
     }
+
+
 }

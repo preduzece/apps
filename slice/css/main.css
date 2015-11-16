@@ -6,20 +6,14 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #ffffff;
-  position: relative;
-  font-weight:400px;
-}
+
 
 body{
-    background: #EEE url("../images/desna.jpg") no-repeat scroll left top;
+    background: #EEE url("../images/proba.gif") no-repeat scroll left top;
     background-color: #EEE;
-    background-image: url("../images/desna.jpg");
+    background-image: url("../images/proba.gif");
     background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: -200px -20px;
+    background-attachment: fixed;
     background-clip: border-box;
     background-origin: padding-box;
     background-size: auto auto;
@@ -89,11 +83,11 @@ a#scrollUp i{
 }
 
 .contactinfo ul li:first-child{
-    margin-left: -15px;
+    margin-left: -45px;
 }
 
 .contactinfo ul li a{
-  font-size: 14px;
+  font-size: 11px;
   color: #696763;
   font-family: 'Roboto', sans-serif;
 }
@@ -105,6 +99,7 @@ a#scrollUp i{
 
 
 .social-icons ul li a {
+  font-size: 12px;
   border: 0 none;
   border-radius: 0;
   color: #696763;
@@ -117,7 +112,7 @@ a#scrollUp i{
 }
 
 .social-icons ul li a i {
-  padding: 11px 15px;
+  padding: 11px 10px;
    transition: all 0.9s ease 0s;
   -moz-transition: all 0.9s ease 0s;
   -webkit-transition: all 0.9s ease 0s;
@@ -301,10 +296,10 @@ a#scrollUp i{
   height: 35px;
   outline: medium none;
   padding-left: 10px;
-  width: 300px;
+  width: 350px;
   background-image: url(../images/home/searchicon.png);
   background-repeat: no-repeat;
-  background-position: 265px;
+  background-position: 330px;
 }
 
 

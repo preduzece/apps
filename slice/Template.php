@@ -18,17 +18,14 @@ and open the template in the editor.
         <link href="css/responsive.css" rel="stylesheet">
         <link rel="stylesheet" href="css/rucni.css">
 
-    <body>
-        <section>
-
+    <body><br><br><br>
+        <div class="container">
             <header id="header "><!--header-->
-
-                <div class="header_top navbar-fixed-top"><!--header_top-->
+                <div class="header_top"><!--header_top-->
                     <div class="container ">
-            
                         <div class="row fixed-top">
                         <!-- <img  style="text-center"  src="images/topbanner.png"> -->
-                            <div class="col-sm-2">
+                            <div class="col-sm-1 text-left">
                                 <div class="contactinfo">
                                     <ul class="nav nav-pills ">
                                         <li><img src="images/home/logonovi.png" alt=""></li>
@@ -45,7 +42,7 @@ and open the template in the editor.
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-sm-3 search_box">
+                            <div class="col-sm-4 search_box">
                                 <form id="w1" action="/vikend/web/site/offers" method="post">
                                     <input type="hidden" name="_csrf" value="amZNdkQzbkcwAT0UFmA.clkLfx8ORxkuWisdGAcBWgg7PgcCDVY.NQ==">
                                     <input type="text" name="descript" placeholder="Brza pretraga...">
@@ -62,17 +59,16 @@ and open the template in the editor.
                             </div>
                         </div>
                     </div>
-
                 </div><!--/header_top-->
             </header>
-        </section>    <br><br><br><br><br><br>
+        </div>
 
 
         <section>
             <div class="container pozadina">
                 <div class="row">
                     <div class="col-sm-3">
-                        <div class="left-sidebar"><br><br>
+                        <div class="left-sidebar"><br>
                             <h2>Kategorije</h2>
                             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
                                 <div class="panel panel-default">
@@ -127,7 +123,7 @@ and open the template in the editor.
                                 </div>
                             </div><!--/category-products-->
 
-                            <br><h2>Newsletter</h2><br>
+                            <h2>Newsletter</h2>
                             <div class=" text-center"><!--shipping-->
                                 <img src="images/newsletter.png" alt="" height="150px" /><br><br>
                                 <form>

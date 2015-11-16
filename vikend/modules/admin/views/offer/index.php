@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use models\Offer;
+use models\Catgry;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\admin\models\OfferSearch */
@@ -28,14 +30,22 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'id',
             'catgry',
             'name',
-            'email:email',
-            'phone',
-            'website:url',
-            // 'image',
+            //'email:email',
+            //'phone',
+            //'website:url',
+            [
+                'attribute' => 'image',
+                'format' => 'html',
+                'label' => 'Image',
+                'value' => function ($data) {
+                    return Html::img('img/offers/'.$data->image,
+                        ['width' => '200px', 'height' => '100px']);
+                },
+            ],
             // 'descript:ntext',
-            'location',
+            //'location',
             'priority',
-            'expires:datetime',
+            //'expires:datetime',
             // 'added:datetime',
 
             ['class' => 'yii\grid\ActionColumn'],

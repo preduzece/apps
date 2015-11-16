@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+?>
+<script src="//cdn.ckeditor.com/4.5.5/full/ckeditor.js"></script>
+<?php
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Catgry */
 /* @var $form yii\widgets\ActiveForm */
@@ -13,10 +16,14 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <div class="row">
-    	<div class="col-xs-4 col-sm-4 col-md-offset-4 col-md-4 col-lg-4">
+    	<div class="col-sm-10">
     		<?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-		    <?= $form->field($model, 'descript')->textarea(['rows' => 6]) ?>
+		    <?= $form->field($model, 'descript')->textarea(['id'=>'descript', 'rows' => 6]) ?>
+
+            <script>
+                CKEDITOR.replace( 'descript' );
+            </script>
 
 		    <?php // $form->field($model, 'added')->textInput() ?>
 

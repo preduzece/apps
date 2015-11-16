@@ -65,4 +65,6 @@ class Offer extends \yii\db\ActiveRecord
             'added' => 'Added',
         ];
     }
+
+
 }

@@ -6,6 +6,10 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;
 
+?>
+<script src="//cdn.ckeditor.com/4.5.5/full/ckeditor.js"></script>
+<?php
+
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Offer */
 /* @var $form yii\widgets\ActiveForm */
@@ -45,7 +49,11 @@ use yii\web\UploadedFile;
         </div>
     </div>
 
-    <?= $form->field($model, 'descript')->textArea(['rows' => 8, 'maxlength' => 2048]) ?>
+    <?= $form->field($model, 'descript')->textArea(['id'=>'descript', 'rows' => 8, 'maxlength' => 2048]) ?>
+
+    <script>
+        CKEDITOR.replace( 'descript' );
+    </script>
 
     <div class="row">
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
