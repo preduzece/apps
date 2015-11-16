@@ -25,23 +25,10 @@ AppAsset::register($this);
     <meta name="keywords" content="vikend, gde za vikend, vikend u Srbiji, vikend u Beogradu, savršen vikend, savršen provod, vikend zabava">
     <meta name="author" content="Gde za vikend | www.gdezavikend.rs">
 
-    <link href="<?= Url::base() ?>/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= Url::base() ?>/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?= Url::base() ?>/css/prettyPhoto.css" rel="stylesheet">
-    <link href="<?= Url::base() ?>/css/price-range.css" rel="stylesheet">
-    <link href="<?= Url::base() ?>/css/animate.css" rel="stylesheet">
-    <link href="<?= Url::base() ?>/css/responsive.css" rel="stylesheet">
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-64193415-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    <meta property="og:url"         content="http://gdezavikend.rs" />
+    <meta property="og:title"       content="GdeZaVikend Official Web Page" />
+    <meta property="og:description" content="gdezavikend.rs, pravi izvor zabave! ;)" />
+    <meta property="og:image"       content="http://gdezavikend.rs/vikend/web/img/slides/vikend.jpg" />
 
     <?= Html::csrfMetaTags() ?>
     <title>Gde za vikend | Gde za vikend u Beogradu, gde za vikend u Srbiji? Najbolje ponude za najluđi provod i savršen vikend. Pronađi zabavu</title>
@@ -52,8 +39,66 @@ AppAsset::register($this);
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= Url::base() ?>/img/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= Url::base() ?>/img/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?= Url::base() ?>/img/ico/apple-touch-icon-57-precomposed.png">
+
+    <link href="<?= Url::base() ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= Url::base() ?>/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?= Url::base() ?>/css/prettyPhoto.css" rel="stylesheet">
+    <link href="<?= Url::base() ?>/css/price-range.css" rel="stylesheet">
+    <link href="<?= Url::base() ?>/css/animate.css" rel="stylesheet">
+    <link href="<?= Url::base() ?>/css/responsive.css" rel="stylesheet">
+
+    <script src="<?= Url::base() ?>/js/jquery.js"></script>
+    <script src="<?= Url::base() ?>/js/bootstrap.min.js"></script>
+    <script src="<?= Url::base() ?>/js/jquery.scrollUp.min.js"></script>
+    <script src="<?= Url::base() ?>/js/price-range.js"></script>
+    <script src="<?= Url::base() ?>/js/jquery.prettyPhoto.js"></script>
+    <script src="<?= Url::base() ?>/js/main.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64193415-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 </head>
 <body>
+
+    <div id="fb-root"></div>
+    <script>
+
+    // LOCAL
+      <?php if ($_SERVER['HTTP_HOST'] == 'localhost'): ?>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '521841924646601',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+
+    // SERVER
+      <?php else: ?>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '521646161332844',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+      <?php endif ?>
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 <?php $this->beginBody() ?>
 
@@ -99,6 +144,8 @@ AppAsset::register($this);
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="<?= Url::to(['site/index']) ?>">Početna</a></li>
                                 <li><a href="<?= Url::to(['site/offers']) ?>">Ponude</a></li> 
+                                <li><a href="<?= Url::to(['site/gallery']) ?>">Galerija</a></li>
+                                <!--<li><a href="<?php // echo Url::to(['site/blog']) ?>">Blog</a></li>-->
                                 <li><a href="<?= Url::to(['site/about']) ?>">O nama</a></li> 
                                 <li><a href="<?= Url::to(['site/contact']) ?>">Kontakt</a></li>
                             </ul>
@@ -166,9 +213,25 @@ AppAsset::register($this);
 
                         </div><!--/category-products-->
 
-                        <div class="text-center"><!--baneri-->
-                            <a href="http://bit.ly/1TNfKCu" target="_blank"><img class="img-responsive" src="<?= Url::base() ?>/img/home/mlgbaner.jpg" alt="Igraonica"/></a><br>
-                            <a href="http://bit.ly/1LuqkvA" target="_blank"><img class="img-responsive" src="<?= Url::base() ?>/img/home/cvecarabaner.jpg" alt="cvecara" /></a>
+                        <!--<div class="fb-like" data-share="true" data-width="230" data-show-faces="true"> </div>-->
+
+                        <div class="fb-page" data-href="https://www.facebook.com/gdezavikend.rs" data-small-header="false"
+                             data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
+                             data-show-posts="false">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/gdezavikend.rs">
+                                    <a href="https://www.facebook.com/gdezavikend.rs">gdezavikend.rs</a>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="text-center" style="margin-bottom: 20px"><!--baneri-->
+                            <a href="http://bit.ly/1TNfKCu" target="_blank">
+                                <img class="img-responsive" src="<?= Url::base() ?>/img/home/mlgbaner.jpg" alt="Igraonica"/>
+                            </a><br>
+                            <a href="http://bit.ly/1LuqkvA" target="_blank">
+                                <img class="img-responsive" src="<?= Url::base() ?>/img/home/cvecarabaner.jpg" alt="Cvecara"/>
+                            </a>
                         </div><!--/baneri-->
 
                     </div>
@@ -188,8 +251,19 @@ AppAsset::register($this);
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="companyinfo">
-                            <img class="img-responsive" src="<?= Url::base() ?>/img/home/baner.png" alt="gde za vikend logo">
+                            <img class="img-responsive" src="<?= Url::base() ?>/img/home/baner.png" alt="gdezavikend.rs">
                         </div>
+                        <?php $form = ActiveForm::begin([ 'action' => ['site/signup'],
+                            'options' => ['class' => 'form-inline']]); ?>
+
+                            Prijava za obaveštenja o novim ponudama
+                            <div class="form-group" style="padding-top: 15px">
+                                <input type="email" name="Nletter[email]" class="form-control" placeholder="Vasa email adresa...">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Prijavite se</button>
+                        <?php ActiveForm::end(); ?>
+
                     </div>
 
                     <div class="col-sm-8">
@@ -202,7 +276,8 @@ AppAsset::register($this);
                                     foreach ($categories as $category): ?> 
                                         
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="<?= Url::to(['site/offers', 'catgry' => $category->id]) ?>"><?= $category->name ?></a></li>
+                                        <li><a href="<?= Url::to(['site/offers', 'catgry' => $category->id]) ?>">
+                                            <?= $category->name ?></a></li>
                                     </ul>
                                     
                                     <?php endforeach ?>
@@ -257,13 +332,6 @@ AppAsset::register($this);
             </div>
         </div>
     </footer><!--/Footer-->
-
-    <script src="<?= Url::base() ?>/js/jquery.js"></script>
-    <script src="<?= Url::base() ?>/js/bootstrap.min.js"></script>
-    <script src="<?= Url::base() ?>/js/jquery.scrollUp.min.js"></script>
-    <script src="<?= Url::base() ?>/js/price-range.js"></script>
-    <script src="<?= Url::base() ?>/js/jquery.prettyPhoto.js"></script>
-    <script src="<?= Url::base() ?>/js/main.js"></script>
 
 <?php $this->endBody() ?>
 </body>

@@ -8,7 +8,7 @@ use yii\helpers\Html;
 <script type="text/javascript">
     function initialize() {
 
-        var pozicija = new google.maps.LatLng(<?= $offer->location ?>);
+        var pozicija = new google.maps.LatLng(<?= $model->location ?>);
 
         var mapOptions = {
             zoom: 15, center: pozicija
@@ -20,7 +20,7 @@ use yii\helpers\Html;
         var marker = new google.maps.Marker({
             position: pozicija,
             map: lokacijaPonude,
-            title: '<?= $offer->name ?>'
+            title: '<?= $model->name ?>'
         });
     }
 
@@ -28,21 +28,21 @@ use yii\helpers\Html;
 </script>
 
 <div class="blog-post-area">
-    <h2 class="title text-center"><?= $offer->name ?></h2>
+    <h2 class="title text-center"><?= $model->name ?></h2>
     <div class="single-blog-post">
         <div class="col-sm-8">
-            <a href="<?= $offer->website ?>">
-                <img src="<?= Url::base() ?>/img/offers/<?= $offer->image ?>" alt="">
+            <a href="<?= $model->website ?>">
+                <img src="<?= Url::base() ?>/img/offers/<?= $model->image ?>" alt="">
             </a>
-            <h3><?= $offer->name ?></h3>
+            <h3><?= $model->name ?></h3>
             
-            <p><?= $offer->descript ?></p>
+            <p><?= $model->descript ?></p>
         </div>
         <div class="col-sm-4">
             <h3>Informacije</h3>
-            <b>Telefon: </b> <?= $offer->phone ?> <p></p>
-            <p><b>Email: </b> <?= $offer->email ?></p>
-            <p><b>Sajt: </b> <a href="<?= $offer->website ?>"><?= $offer->website ?> </a> </p>
+            <b>Telefon: </b> <?= $model->phone ?> <p></p>
+            <p><b>Email: </b> <?= $model->email ?></p>
+            <p><b>Sajt: </b> <a href="<?= $model->website ?>"><?= $model->website ?> </a> </p>
             <p><b>Lokacija: </b></p>
             <div id="mapa" style="height: 400px;"></div>
             <div id="prognoza" class="weather" style="margin-top:15px">
