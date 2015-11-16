@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -24,6 +25,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+
+    <img src="<?= Url::base() ?>/img/slides/<?= $model->image ?>"
+        style="margin-bottom: 30px" class="img-responsive">
 
     <?= DetailView::widget([
         'model' => $model,

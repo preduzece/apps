@@ -52,6 +52,13 @@ a.asc:after, a.desc:after {
     padding-left: 5px;
 }
 
+a{
+    color:#de6d29;
+}
+a:hover {
+    color:#ffffff;
+}
+
 a.asc:after {
     content: /*"\e113"*/ "\e151";
 }

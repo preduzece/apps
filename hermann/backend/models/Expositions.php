@@ -44,11 +44,11 @@ class Expositions extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'exposition_id' => 'Exposition ID',
-            'exposition_title' => 'Exposition Title',
-            'exposition_description' => 'Exposition Description',
-            'file' => 'Exposition Image',
-            'exposition_status' => 'Exposition Status',
+            'exposition_id' => 'ID',
+            'exposition_title' => 'Titre',
+            'exposition_description' => ' Description',
+            'file' => 'Image',
+            'exposition_status' => 'Statut',
         ];
     }
 

@@ -20,8 +20,6 @@ $domain = "gdezavikend.rs";
 
 $htmlMessage = render('mail.php', $message);
 
-// var_dump($htmlMessage); die;
-
 # Now, compose and send your message.
 $mailGun->sendMessage($domain, [
     'from'    => 'office@gdezavikend.rs',

@@ -12,6 +12,9 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'components' => [
+    'errorHandler' => [
+            'errorAction' => 'site/error',
+        ],
         'log' => [
             'targets' => [
                 [

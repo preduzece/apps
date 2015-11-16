@@ -1,4 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php 
+use yii\helpers\Url;
+ ?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:fb="http://ogp.me/ns/fb#"
       xmlns:fb="http://www.facebook.com/2008/fbml">
@@ -42,13 +45,6 @@
             <div class="flex-viewport">
               <ul class="slides" >
                 <?php 
-                use yii\helpers\Url;
-                use backend\models\Objects;
-                $objects = Objects::find()
-                ->select('*')
-                ->leftJoin('expositions', '`objects`.`expositions_exposition_id` = `expositions`.`exposition_id`')
-                ->where(['exposition_status' => 'active'])
-                ->all(); 
                 foreach ($objects as $obj): ?> 
                 <li class="clone" >
                   <img src='<?="admin/". $obj->object_image ?>' class="ignore" >
@@ -60,11 +56,14 @@
                   <div class="nekidiv" >
                       <p class="nekip" >
                           <?=$obj->object_description ?><br>
-                          <a href="http://<?=$obj->object_link ?> "> Link </a>        
+                          <!-- ispisivanje linka, tj.sakrivanje linka u slucaju da on nije upisan -->
+                          <?php if ($obj->object_link!=""):?>
+                              <a href="http://<?=$obj->object_link ?> " target="_blank"> En savoir plus </a>
+                          <?php endif;?>
                       </p>
                   </div>
                 </li>
-                <?php endforeach ?>
+                <?php endforeach; ?>
               </ul>
             </div>
             <ul class="flex-direction-nav">

@@ -1,0 +1,2 @@
+[30-Oct-2015 15:38:32 UTC] PHP Fatal error:  Call to a member function saveAs() on a non-object in /home/imagecon/public_html/Hermann2/backend/controllers/ObjectsController.php on line 86
+[30-Oct-2015 15:43:05 UTC] PHP Fatal error:  Call to a member function saveAs() on a non-object in /home/imagecon/public_html/Hermann2/backend/controllers/ObjectsController.php on line 86

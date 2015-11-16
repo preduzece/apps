@@ -6,8 +6,6 @@ use yii\web\Controller;
 
 class PanelController extends Controller
 {
-    public $layout = 'admin';
-
     public function behaviors()
     {
         return [
@@ -33,6 +31,7 @@ class PanelController extends Controller
             ],
         ];
     }
+
     public function actionIndex()
     {
         return $this->render('index');

@@ -15,8 +15,6 @@ use yii\web\UploadedFile;
  */
 class OfferController extends Controller
 {
-    public $layout = 'admin';
-
     public function behaviors()
     {
         return [
@@ -192,7 +190,8 @@ class OfferController extends Controller
         if (($model = Offer::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException(
+                'The requested page does not exist.');
         }
     }
 }

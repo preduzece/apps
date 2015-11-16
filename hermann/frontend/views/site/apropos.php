@@ -28,12 +28,15 @@ use backend\models\Expositions;
       <?php $expositions = Expositions::find()->all(); 
         foreach ($expositions as $exp): ?> 
           <?php if ($exp->exposition_status=='active'):?>
-            <div class="row" style="margin-top: 150px">
+            <div class="row" style="margin-top: 120px">
                 <div class="row">
                   <div class="col-md-8 expo-apropos">
                     <div class="apropos-description">
                       <h2><?=$exp->exposition_title ?></h2>
                       <p><?=$exp->exposition_description ?></p>
+                      <span class="glyphicon glyphicon-camera">
+                      </span> 
+                    <a href="<?= Url::to(['site/index', 'exposition_id' => $exp->exposition_id]) ?>"><?=$exp->exposition_title ?></a>
                     </div>
                   <div class="apropos-description-img"><img src='<?="admin/". $exp->exposition_image ?>'></div>
                   </div>

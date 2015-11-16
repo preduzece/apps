@@ -14,8 +14,6 @@ use yii\filters\VerbFilter;
  */
 class OrderController extends Controller
 {
-    public $layout = 'admin';
-
     public function behaviors()
     {
         return [

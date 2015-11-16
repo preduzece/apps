@@ -43,7 +43,8 @@ use app\assets\AppAsset;
                     ['label' => 'Kategorije', 'url' => ['/adminpanel/catgry']],
                     # ['label' => 'Porudzbe', 'url' => ['/adminpanel/order']],
                     ['label' => 'Ponude', 'url' => ['/adminpanel/offer']],
-                    ['label' => 'Slider', 'url' => ['/adminpanel/slider']],
+                    ['label' => 'Video', 'url' => ['/adminpanel/video']],
+                    ['label' => 'Slider', 'url' => ['/adminpanel/slide']],
                     Yii::$app->user->isGuest ?
                         ['label' => 'Login', 'url' => ['/site/login']] :
                         ['label' => 'Logout (' . Yii::$app->user->identity->fname . ')',

@@ -15,8 +15,6 @@ use yii\web\UploadedFile;
  */
 class SlideController extends Controller
 {
-    public $layout = 'admin';
-
     public function behaviors()
     {
         return [

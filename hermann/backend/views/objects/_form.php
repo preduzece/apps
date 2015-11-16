@@ -50,7 +50,7 @@ use backend\models\Expositions;
             ]
         ])->fileInput() ?>
 
-    <img  id="thumbnil" style="width:20%; margin-top:10px;"  src="" alt="image"/>
+    <img  id="thumbnil" style="width:20%; margin-top:10px;"  src="<?=$model->object_image ?>" alt="image"/>
 
     <?= $form->field($model, 'expositions_exposition_id')->dropDownList(
             ArrayHelper::map(Expositions::find()->all(), 'exposition_id', 'exposition_title'),

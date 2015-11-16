@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'pswd')->textInput(['maxlength' => true]) ?>
 
-            <?php $dataList = ['0' => 'Posetilac', '1' => 'Korisnik', '2' => 'Administrator']; ?>
+            <?php $dataList = ['1' => 'Korisnik', '2' => 'Autor', '3' => 'Admin']; ?>
 
             <?= $form->field($model, 'role')->dropDownList($dataList, ['empty' => '--- Odaberi---']) ?><br/>
 

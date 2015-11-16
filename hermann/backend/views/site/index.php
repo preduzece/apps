@@ -7,7 +7,7 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Hermann - Admin panel</h1>
+        <h1>Collection Hermann - Administration du site</h1>
     </div>
 
     <div class="row" >

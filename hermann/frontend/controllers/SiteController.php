@@ -7,12 +7,14 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use backend\models\Objects;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
+use yii\helpers\Url;
 /**
  * Site controller
  */
@@ -70,10 +72,29 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($exposition_id=0)
     {
-        return $this->render('index');
+
+        $objects = Objects::find()
+                ->select('*')
+                ->leftJoin('expositions', '`objects`.`expositions_exposition_id` = `expositions`.`exposition_id`')
+                ->where(['exposition_status' => 'active'])
+                ->all(); 
+
+        if ($exposition_id > 0) {
+
+            $objects = Objects::find()
+                ->select('*')
+                ->leftJoin('expositions', '`objects`.`expositions_exposition_id` = `expositions`.`exposition_id`')
+                ->where(['expositions_exposition_id' => $exposition_id])
+                ->all(); 
+        }
+        return $this->render('index', [
+            'objects' => $objects,
+        ]);
     }
+
+
 
     /**
      * Logs in a user.
@@ -225,5 +246,10 @@ class SiteController extends Controller
     public function actionArchives()
     {
         return $this->render('archives');
+    }
+
+    public function actionError()
+    {
+        return $this->render('error');
     }
 }

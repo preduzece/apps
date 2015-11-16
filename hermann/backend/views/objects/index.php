@@ -8,7 +8,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\ObjectsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Objects';
+$this->title = 'Objets';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="objects-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Objects', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Créer un objet', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php 
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'object_image',
                 'format' => 'html',
-                'label' => 'Object image',
+                'label' => 'Image',
                 'value' => function ($data) {
                     return Html::img($data->object_image,
                         ['width' => '100px', 'height' => '60px']);

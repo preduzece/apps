@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 ?>
 
 <script>
-	 function showMyImage(fileInput) {
+     function showMyImage(fileInput) {
         var files = fileInput.files;
         for (var i = 0; i < files.length; i++) {           
             var file = files[i];
@@ -39,16 +39,16 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'exposition_description')->textarea(['rows' => 8]) ?>
 
     <?= $form->field($model, 'file', [
-    		'inputOptions' => [
-		        'placeholder' => $model->getAttributeLabel('demo'),
-		        'onchange' => 'showMyImage(this)',
-		        'type' => 'file',
-		    ]
-    	])->fileInput() ?>
+            'inputOptions' => [
+                'placeholder' => $model->getAttributeLabel('demo'),
+                'onchange' => 'showMyImage(this)',
+                'type' => 'file',
+            ]
+        ])->fileInput() ?>
 
 
 
-	<img  id="thumbnil" style="width:20%; margin-top:10px;"  src="admin/" alt="image"/>
+    <img  id="thumbnil" style="width:20%; margin-top:10px;"  src="<?=$model->exposition_image ?>" alt="image"/>
 
 
     <?= $form->field($model, 'exposition_status')->dropDownList([ 'active' => 'Active', 'inactive' => 'Inactive', ], ['prompt' => 'Exposition status']) ?>

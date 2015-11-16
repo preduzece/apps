@@ -81,6 +81,9 @@ AppAsset::register($this);
 
 
 <?php $this->endBody() ?>
+<div class="row">
+    <p class="text-center" style="font-size:0.7em"><a href="https://www.lesdigivores.ch" target="_blank" title="Agence web, création de sites Internet à Lausanne et Genève">Une création Les DIGIVORES - Agence Web à Genève et Lausanne</a></p>
+</div>
 </body>
 </html>
 <?php $this->endPage() ?>
