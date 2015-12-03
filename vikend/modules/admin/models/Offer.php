@@ -66,5 +66,8 @@ class Offer extends \yii\db\ActiveRecord
         ];
     }
 
+    function getCategory(){
+        return $this->hasOne(Catgry::className(), ['id' => 'catgry']);
+    }
 
 }

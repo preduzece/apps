@@ -4,7 +4,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost')
 	return [
 	    'class' => 'yii\db\Connection',
 	    'dsn' => 'mysql:host=localhost;dbname=vikend',
-	    'username' => 'root', 'password' => 'root',
+	    'username' => 'root', 'password' => '',
 	    'charset' => 'utf8',
 	];
 
