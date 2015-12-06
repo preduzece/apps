@@ -225,7 +225,7 @@ AppAsset::register($this);
                             </div>
                         </div>
 
-                        <div class="text-center" style="margin-bottom: 20px"><!--baneri-->
+                        <div class="text-center" style="margin: 20px 0 20px"><!--baneri-->
                             <a href="http://bit.ly/1TNfKCu" target="_blank">
                                 <img class="img-responsive" src="<?= Url::base() ?>/img/home/mlgbaner.jpg" alt="Igraonica"/>
                             </a><br>

@@ -11,7 +11,7 @@ use yii\helpers\Url;
                     <h2><?= $model->name ?></h2>
                     <p><?= substr($model->descript, 0, 128) ?>...</p>
                     <a href="<?= Url::to(['site/offer', 'id' => $model->id]) ?>" 
-                        class="btn btn-default add-to-cart">Vidi detalje</a>
+                        class="btn btn-default add-to-cart" style="margin-bottom: 15px">Vidi detalje</a>
                 </div>
                 <div class="product-overlay">
                     <div class="overlay-content">
