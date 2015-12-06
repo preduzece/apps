@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,57 +6,58 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+        <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/rucni.css">
+    </head>
 
-    <body><br><br><br>
-        <div class="container">
-            <header id="header "><!--header-->
-                <div class="header_top"><!--header_top-->
-                    <div class="container ">
-                        <div class="row fixed-top">
-                        <!-- <img  style="text-center"  src="images/topbanner.png"> -->
-                            <div class="col-sm-1 text-left">
-                                <div class="contactinfo">
-                                    <ul class="nav nav-pills ">
-                                        <li><img src="images/home/logonovi.png" alt=""></li>
-                                    </ul>
-                                </div>
+    <body>
+    <img src="images/pozadina1920.jpg" id="cool">
+        <header id="header "><!--header-->
+            <div class="header_top"><!--header_top-->
+                <div class="container ">
+                    <div class="row fixed-top">
+                    <!-- <img  style="text-center"  src="images/topbanner.png"> -->
+                        <div class="col-sm-1 text-left">
+                            <div class="contactinfo">
+                                <ul class="nav nav-pills ">
+                                    <li><img src="images/home/logonovi.png" alt=""></li>
+                                </ul>
                             </div>
-                            <div class="col-sm-5">
-                                <div class="social-icons">
-                                    <ul class="nav nav-pills">
-                                        <li><a href=""><i class="fa fa-home"> Pocetna |</i></a></li>
-                                        <li><a href=""><i class="fa fa-globe"> Ponuda |</i></a></li>
-                                        <li><a href=""><i class="fa fa-user"> O nama |</i></a></li>
-                                        <li><a href=""><i class="fa fa-phone"> Kontakt</i></a></li>
-                                    </ul>
-                                </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="social-icons">
+                                <ul class="nav nav-pills">
+                                    <li><a href=""><i class="fa fa-home"> Pocetna |</i></a></li>
+                                    <li><a href=""><i class="fa fa-globe"> Ponuda |</i></a></li>
+                                    <li><a href=""><i class="fa fa-user"> O nama |</i></a></li>
+                                    <li><a href=""><i class="fa fa-phone"> Kontakt</i></a></li>
+                                </ul>
                             </div>
-                            <div class="col-sm-4 search_box">
-                                <form id="w1" action="/vikend/web/site/offers" method="post">
-                                    <input type="hidden" name="_csrf" value="amZNdkQzbkcwAT0UFmA.clkLfx8ORxkuWisdGAcBWgg7PgcCDVY.NQ==">
-                                    <input type="text" name="descript" placeholder="Brza pretraga...">
-                                </form>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="social-icons pull-right">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
+                        </div>
+                        <div class="col-sm-4 search_box">
+                            <form id="w1" action="/vikend/web/site/offers" method="post">
+                                <input type="hidden" name="_csrf" value="amZNdkQzbkcwAT0UFmA.clkLfx8ORxkuWisdGAcBWgg7PgcCDVY.NQ==">
+                                <input type="text" name="descript" placeholder="Brza pretraga...">
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="social-icons pull-right">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div><!--/header_top-->
-            </header>
-        </div>
+                </div>
+            </div><!--/header_top-->
+        </header>
 
 
         <section>
@@ -92,7 +88,7 @@ and open the template in the editor.
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="womens" class="panel-collapse ">
+                                    <div id="womens" class="panel-collapse">
                                     <!-- za slucaj da hocemo da bude zatvorena podkategorija dodati colapse -->
                                         <div class="panel-body">
                                             <ul>
@@ -125,7 +121,7 @@ and open the template in the editor.
 
                             <h2>Newsletter</h2>
                             <div class=" text-center"><!--shipping-->
-                                <img src="images/newsletter.png" alt="" height="150px" /><br><br>
+                                <img src="images/newsletter.png" alt="" height="100px" width="100px" /><br><br>
                                 <form>
                                     <input type="text" name="naziv" class="form-control" placeholder="Vaša e-mail adresa"><br>
                                     <button type="submit" class="btn btn-primary">Prijavi se</button><br>
@@ -148,8 +144,8 @@ and open the template in the editor.
             </div>
         </section>
 
-        <div class="container">
-            <footer id="footer"><!--Footer-->
+        <!-- <div class="container">
+            <footer id="footer">
                 <div class="footer-widget">
                     <div class="container">
                         <div class="row">
@@ -205,12 +201,8 @@ and open the template in the editor.
                         </div>
                     </div>
                 </div>
-
-
-                
-
             </footer>
-        </div>
+        </div> -->
 
         <div class="footer-bottom">
             <div class="row">
@@ -230,7 +222,6 @@ and open the template in the editor.
         <script src="js/price-range.js"></script>
         <script src="js/jquery.prettyPhoto.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/rucni.js"></script>
         <script src="js/jquery.zaccordion.js"></script>
     </body>
 </html>

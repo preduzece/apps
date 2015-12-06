@@ -3,20 +3,30 @@ $title = "Home";
 
 $content = '<!--recommended_items--><br>
 <div class="recommended_items">
-    <h2 class="title text-center">Top vikend</h2>
+    <h2 class="title text-center">gde za vikend - top ponuda</h2>
+    
     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-        <ul id="splash">
-            <li>
-                <img src="images/1.jpg" alt="" />
-                <div>
-                    <strong>Old School Diner</strong>
-                    <p class="splash-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor lacus sollicitudin ligula sagittis a ultricies nulla ultricies. Ut odio nisi, posuere sed blandit at, bibendum non dolor.</p>
+        <div class="carousel-inner">
+            <div class="item1">   
+                <div class="product-image-wrapper fixer">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <a href="" title="" target="_blank">
+                                <img src="images/1.jpg" class="img-responsive" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
+        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>            
     </div>
-
-</div>
+</div><!--/recommended_items-->
 
 <div class="features_items"><!--features_items-->
     <h2 class="title text-center">Top 3 preporuka gde za vikend</h2>
