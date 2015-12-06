@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+
+    <title>Zasto volim da mesim...</title>
+
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="header">
+            <div class="message">
+                <h2>Volim da MESIM <br/>jer...</h2>
+            </div>
+            <div class="logo">
+                <img src="img/logo.png" />
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="navbar">
+                <ul>
+                    <li class="target"><a class="link" href="#">Napravi poster</a></li>
+                    <li><a href="gallery.html">Galerija postera</a></li>
+                    <li><a href="rules.html">Pravila</a></li>
+                    <li><a href="rewards.html">Pokloni</a></li>
+                </ul>
+            </div>
+
+            <div class="home">
+
+                <h1>Izaberi sliku</h1>
+
+                <div class="collapse in" id="preview">
+                    <p><img id="image" style="margin: 20px; max-height: 315px" src="img/slider/okvir1.png" /></p>
+                </div>
+
+                <div class="collapse" id="source">
+                    <p style="margin-bottom: 20px">
+                        <a id="upload" href="#upload"> <img src="img/upload.jpg"> </a>
+                        <a id="facebook" href="#facebook"> <img src="img/fb_upload.jpeg"> </a>
+                    </p>
+
+                    <form id="fb_upload" action="#" method="post">
+                        <div id="url_panel" class="input-group" style="width: 500px; margin: auto;">
+                            <input id="url" type="url" class="form-control"
+                                   placeholder="URL vaše slike sa facebook-a" required>
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary">Preuzmi</button>
+                            </span>
+                        </div>
+                    </form>
+
+                </div>
+
+                <form>
+                    <input id="file" onchange="readUrl(this)" class="hidden" type="file" accept="image/*" />
+                    <p style="margin-top: 25px">
+                        <a id="chooser" class="button" href="#upload">Dodaj svoju</a>
+                        <a class="button" href="create.html">Nastavi dalje</a>
+                    </p>
+                </form>
+
+
+            </div>
+        </div>
+
+        <div class="footer"></div>
+    </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+        $('#url_panel').hide();
+
+        function readUrl(element) {
+           if (element.files && element.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#image').attr('src', e.target.result);
+                    // console.log(e.target.result);
+                }
+
+               reader.readAsDataURL(element.files[0]);
+               // console.log(element.files);
+           }
+        }
+
+        $('#fb_upload').on('submit', function() {
+            event.preventDefault();
+            var source = $('#url').val();
+
+            if(source.indexOf('&theater') > -1){
+                $('#url').val('Morate ubaciti URL ka slici a ne ka POST-u koji sadrzi sliku!');
+                return;
+            } else {
+                $('#image').attr('src', source);
+                $('#preview').collapse('toggle');
+                $('#source').collapse('toggle');
+            }
+        });
+
+        $('#upload').on('click', function() {
+            event.preventDefault();
+            $('#preview').collapse('toggle');
+            $('#source').collapse('toggle');
+            $('#url_panel').hide();
+            $('#file').click();
+        });
+
+        $('#chooser').on('click', function() {
+            event.preventDefault();
+            $('#preview').collapse('toggle');
+            $('#source').collapse('toggle');
+        });
+
+        $('#facebook').on('click', function() {
+            event.preventDefault();
+            $('#url_panel').show();
+        });
+    </script>
+</body>
+</html>
