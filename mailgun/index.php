@@ -3,7 +3,8 @@
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 
-function render($path, $message){
+function render($path, $message)
+{
     ob_start();
 
     include $path;
@@ -22,13 +23,14 @@ $htmlMessage = render('mail.php', $message);
 
 # Now, compose and send your message.
 $mailGun->sendMessage($domain, [
-    'from'    => 'office@gdezavikend.rs',
-    'to'      => 'dmilos91@gmail.com',
-    'subject' => 'The PHP SDK is awesome!',
-    'html'    => (string) $htmlMessage,
-    // 'text'    => (string) $message
+        'from' => 'office@gdezavikend.rs',
+        'to' => 'milos_dodic@live.com',
+        # 'h:reply-to' => 'losmi@live.com',
+        'subject' => 'The PHP SDK is awesome!',
+        'html' => (string)$htmlMessage,
+        # 'text'    => (string) $message
     ]
 );
 
-var_dump($mailGun); die();
+echo '<pre>'; var_dump($mailGun); die();
 ?>
