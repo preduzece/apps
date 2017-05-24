@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+	    <title>{{ title }}</title>
+	    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+
+	    <script type="text/javascript" src="/javascripts/jquery-1.11.2.min.js"></script>
+	    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+
+            function reseter () {
+                $('#idAuta').val('');
+            }
+
+            function ukloni(idAuta) {
+                $.post('/auto/delete', { id: idAuta })
+                    .done(function( data ) {
+                        if (data == 'OK') {
+                            $('#auto'+idAuta).remove();
+                        } else {
+                            alert('Greska pri brisanju iz baze!');
+                        }
+                    });
+            }
+
+            function izmeni (idAuta) {
+                $.get( 'auto/find', { id: idAuta })
+                    .done(function( result ) {
+                        var data = result;
+
+                        if (typeof data != 'undefined') {
+                            $('#model').val(data.model);
+                            $('#tip option[value='+data.tip._id+']')
+                                .attr('selected', 'selected');
+                            $('#marka option[value='+data.marka._id+']')
+                                .attr('selected', 'selected');
+                            $('#stanje').val(data.stanje);
+                            $('#opis').val(data.opis);
+                            $('#cena').val(data.cena);
+
+                            $('#idAuta').val(data._id);
+                        } else {
+                            alert(result);
+                        }
+                    });
+            }
+
+            $.get('service/tipovi').done(
+                function(data) {
+
+                    var tipovi = ''; var podaci = data;
+
+                    for (var i = 0; i < podaci.length; i++) {
+
+                        tipovi += '<option value="'+podaci[i]._id+'">'+
+                            podaci[i].naziv+'</option>';
+                    };
+
+                    $('#tip').html(tipovi);
+                }
+            );
+
+            $.get('service/marke').done(
+                function(data) {
+
+                    var marke = ''; var podaci = data;
+
+                    for (var i = 0; i < podaci.length; i++) {
+
+                        marke += '<option value="'+podaci[i]._id+'">'+
+                            podaci[i].naziv+'</option>';
+                    };
+
+                    $('#marka').html(marke);
+                }
+            );
+
+            /*$.get('service/auti').done(function( data ) {
+                    
+                var auti = ''; var podaci = data;
+
+                    for (var i = 0; i < podaci.length; i++) {
+                            auti += '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="auto'+podaci[i]._id+'">'+
+                                '<div class="well">'+
+                                    '<legend>'+podaci[i].marka.naziv+' ('+podaci[i].model+')</legend>'+
+
+                                    '<p>'+podaci[i].opis.substr(0, 128)+'...</p>'+
+
+                                    '<div class="row">'+
+                                        '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                            '<h4>'+podaci[i].cena+' EUR</h4>'+
+                                        '</div>'+
+                                        '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                            '<h4>'+podaci[i].stanje+' KOM</h4>'+
+                                        '</div>'+
+                                    '</div>'+
+
+                                    '<div class="row">'+
+                                        '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                            '<p><b>Tip: </b> '+podaci[i].tip.naziv+'</p>'+
+                                        '</div>'+
+                                        '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                            '<p><b>Marka: </b>'+podaci[i].marka.naziv+'</p>'+
+                                        '</div>'+
+                                    '</div>'+
+
+                                    '<button class="btn btn-primary" onclick="izmeni(`'+podaci[i]._id+'`)">Izmeni</button>&nbsp;'+
+                                    '<button class="btn btn-danger" onclick="ukloni(`'+podaci[i]._id+'`)">Ukloni</button>'+
+                                    
+                                '</div>'+
+                            '</div>';
+                            };
+
+                    $('#auti').html(auti);
+            }); */
+        </script>
+  	</head>
+  	<body>
+  		<div class="jumbotron">
+  			<div class="container">
+			    <h1>{{ title }}</h1>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <p class="text-left">
+                            <ul class="nav nav-pills">
+                                <li role="presentation" class="active"><a href="/autosalon/panel">Automobili</a></li>
+                                <li role="presentation"><a href="/autosalon/panel/users">Korisnici</a></li>
+                                <li role="presentation"><a href="/autosalon/panel/orders">Porudzbe</a></li>
+                                <li role="presentation"><a href="/autosalon/panel/stats">Statistika</a></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <p class="text-right" style="margin-top: 3%">
+                            Dobrodosli {{ admin.ime}} {{ admin.przme }}
+                            <a href="/autosalon/panel/logout" class="btn btn-warning">Odjava</a>
+                        </p>
+                    </div>
+                </div>
+  			</div>
+  		</div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                    <form action="marka/create" method="POST" role="form">
+                        <legend>Dodaj marku automobila</legend>
+                    
+                        <div class="form-group">
+                            <input name="naziv" type="text" class="form-control" 
+                                placeholder="Naziv" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <textarea name="opis" rows="5" class="form-control" 
+                                placeholder="Opis marke..." required></textarea>
+                        </div>
+                    
+                        <button type="reset" onclick="reseter()" class="btn btn-default">Reset</button>
+                        <button type="submit" class="btn btn-primary">Zapamti</button>
+                    </form><br/><br/>
+
+                    <form action="tip/create" method="POST" role="form">
+                        <legend>Dodaj tip automobila</legend>
+                    
+                        <div class="form-group">
+                            <input name="naziv" type="text" class="form-control" 
+                                placeholder="Naziv" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <textarea name="opis" rows="5" class="form-control" 
+                                placeholder="Opis tipa..." required></textarea>
+                        </div>
+                    
+                        <button type="reset" onclick="reseter()" class="btn btn-default">Reset</button>
+                        <button type="submit" class="btn btn-primary">Zapamti</button>
+                    </form><br/>
+                </div>
+
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+                    <form action="auto/create" method="POST" role="form">
+                        <legend>Dodaj model automobila</legend>
+
+                        <input id="idAuta" type="hidden" name="idAuta" value="" />
+                    
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input id="model" name="model" type="text" class="form-control" 
+                                            placeholder="Model" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <select name="tip" id="tip" class="form-control" required></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select name="marka" id="marka" class="form-control" required></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input id="cena" name="cena" type="number" class="form-control" 
+                                                placeholder="Cena" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input id="stanje" name="stanje" type="number" class="form-control" 
+                                                placeholder="Kolicina" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <textarea id="opis" name="opis" rows="8" class="form-control" 
+                                        placeholder="Karakteristike automobila..." required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <p class="text-right">
+                            <button type="reset" onclick="reseter()" class="btn btn-default">Reset</button>
+                            <button type="submit" class="btn btn-primary">Zapamti</button>
+                        </p>
+                    </form><br/>
+
+                    <div id="auti" class="row">
+                        {{#content}}
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="well">
+                                    <legend>{{marka.naziv }} ({{model}})</legend>
+
+                                    <p>{{opis}}</p>
+
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <h4>{{cena}} EUR</h4>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <h4>{{stanje}} KOM</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <p><b>Tip: </b> {{tip.naziv}}</p>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <p><b>Marka: </b>{{marka.naziv}}</p>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-right">
+                                        <button class="btn btn-primary" onclick="izmeni('{{_id}}')">Izmeni</button>
+                                        <button class="btn btn-danger" onclick="ukloni('{{_id}}')">Ukloni</button>
+                                    </p>
+                                </div>
+                            </div>
+                        {{/content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+  	</body>
+</html>

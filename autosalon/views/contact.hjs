@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+	    <title>Autosalon | {{ title }}</title>
+	    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+
+	    <script type="text/javascript" src="/javascripts/jquery-1.11.2.min.js"></script>
+	    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+
+        <script type="text/javascript">
+            var map;
+                    
+            function initialize() {
+
+                var latLng = new google.maps.LatLng(44.7945124, 20.4794992);
+
+                var mapOptions = { zoom: 12, scrollwheel: false, center: latLng };
+
+                map = new google.maps.Map(
+                    document.getElementById('map'), mapOptions);
+
+                var marker = new google.maps.Marker({
+                    position: latLng, map: map
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+  	</head>
+  	<body>
+  		<div class="jumbotron">
+  			<div class="container">
+			    <h1>{{ title }}</h1>
+			    <p>Dobrodosli na {{ title }}</p>
+  			</div>
+  		</div>
+        
+        <div class="container">
+            <div class="page-header" style="margin-top: 5px">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <ul class="nav nav-pills">
+                            <li role="presentation"><a href="/autosalon/">Pocetna</a></li>
+                            <li role="presentation"><a href="/autosalon/about">O nama</a></li>
+                            <li role="presentation" class="active"><a href="/autosalon/contact">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 30px">
+
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                    <div id="map" style="height:500px"></div>
+                </div>
+
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                    <form action="#" method="POST" role="form">
+
+                        <legend><h3>Kontakt forma</h3></legend>
+                    
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Ime Prezime" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email adresa" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-control" placeholder="Naslov" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <textarea name="subject" rows="10" class="form-control" placeholder="Vasa poruka..." required></textarea>
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary pull-right">Posalji poruku</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+  	</body>
+</html>

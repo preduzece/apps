@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Autosalon | {{ title }}</title>
+        <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+
+        <script type="text/javascript" src="/javascripts/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+
+            function otkazi (porId) {
+                $.post( '/autosalon/order/delete', 
+                    { porudzba: porId }).done(function(data) {
+
+                    if (data == 'OK') {
+                        $('#auto'+porId).remove();
+                    } else {
+                        alert('Greska pri kreiranju porudzbe!');
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>{{ title }}</h1>
+                <p>Dobrodosli {{ user.ime }} {{ user.przme }}</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="page-header" style="margin-top: 5px">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active">
+                                <a href="/autosalon/profile"><span class="glyphicon glyphicon-user"></span></a></li>
+                            <li role="presentation"><a href="/autosalon/">Pocetna</a></li>
+                            <li role="presentation"><a href="/autosalon/about">O nama</a></li>
+                            <li role="presentation"><a href="/autosalon/contact">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-right">
+                        <p class="text-right"><h4 style="margin: 2px">Prijavljeni ste kao: 
+                            <a href="profile">{{user.ime}} {{user.przme}}</a> 
+                            <span><a href="/autosalon/logout" class="btn btn-warning">Odjava</a></span></h4> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+                    <div id="auti" class="row">
+                        {{#content}}
+                            <div id="auto{{automobil._id}}" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="well">
+                                    <legend>{{automobil.marka.naziv}} ({{automobil.model}})</legend>
+
+                                    <p>{{automobil.opis}}</p>
+
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <h4>{{automobil.cena}} EUR</h4>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <h4>{{automobil.stanje}} KOM</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <p><b>Tip: </b> {{automobil.tip.naziv}}</p>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <p><b>Marka: </b>{{automobil.marka.naziv}}</p>
+                                        </div>
+                                    </div>
+                                        
+                                    <p class="text-right">
+                                        <button class="btn btn-danger" onclick="otkazi('{{automobil._id}}')">Otkazi</button>
+                                    </p>
+                                </div>
+                            </div>
+                        {{/content}}
+                    </div>
+                </div>
+
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                    <div class="well">
+                        {{#news}}
+                            <h3><a href="{{link}}">{{title}}</a></h3>
+                            {{content}}<hr/>
+                        {{/news}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

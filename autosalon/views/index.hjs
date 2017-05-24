@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+	    <title>Autosalon | {{ title }}</title>
+	    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+
+	    <script type="text/javascript" src="/javascripts/jquery-1.11.2.min.js"></script>
+	    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+
+            $.get( "/autosalon/service/marke" ).done( function( data ) {
+
+                    var marke = ''; var podaci = data;
+
+                    for (var i = 0; i < podaci.length; i++) {
+
+                        marke += '<option value="'+podaci[i]._id+'">'+
+                            podaci[i].naziv+'</option>';
+                    };
+
+                    $('#marka').html(marke);
+            });
+
+            function pronadji () {
+                
+                $.get('/autosalon/auto/search', {model: $('#termin').val()}).done(function( data ) {
+                        
+                    var auti = ''; var podaci = data;
+
+                        for (var i = 0; i < podaci.length; i++) {
+
+                                auti += '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                    '<div class="well">'+
+                                        '<legend>'+podaci[i].marka.naziv+' ('+podaci[i].model+')</legend>'+
+
+                                        '<p>'+podaci[i].opis+'</p>'+
+
+                                        '<div class="row">'+
+                                            '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                                '<h4>'+podaci[i].cena+' EUR</h4>'+
+                                            '</div>'+
+                                            '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                                '<h4>'+podaci[i].stanje+' KOM</h4>'+
+                                            '</div>'+
+                                        '</div>'+
+
+                                        '<div class="row">'+
+                                            '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                                '<p><b>Tip: </b> '+podaci[i].tip.naziv+'</p>'+
+                                            '</div>'+
+                                            '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                                '<p><b>Marka: </b>'+podaci[i].marka.naziv+'</p>'+
+                                            '</div>'+
+                                        '</div>';
+
+                            if (podaci[i]._id != null) {
+                                auti+='<p class="text-right">'+
+                                    '<button class="btn btn-danger" onclick="poruci(`'+podaci[i]._id+'`)">Poruci</button>&nbsp;'+
+                                    '<button class="btn btn-success" onclick="komentar(`'+podaci[i]._id+'`)">Komentar</button>'+
+                                '</p>';
+                            }
+
+                                    auti+='</div>'+
+                                '</div>';
+                                };
+
+                        $('#auti').html(auti);
+                });
+            }
+
+            function sortiraj () {
+                
+                $.get('auto/sort', {marka: $('#marka').val()}).done(function( data ) {
+                        
+                    var auti = ''; var podaci = data;
+
+                        for (var i = 0; i < podaci.length; i++) {
+
+                                auti += '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                    '<div class="well">'+
+                                        '<legend>'+podaci[i].marka.naziv+' ('+podaci[i].model+')</legend>'+
+
+                                        '<p>'+podaci[i].opis+'</p>'+
+
+                                        '<div class="row">'+
+                                            '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                                '<h4>'+podaci[i].cena+' EUR</h4>'+
+                                            '</div>'+
+                                            '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                                '<h4>'+podaci[i].stanje+' KOM</h4>'+
+                                            '</div>'+
+                                        '</div>'+
+
+                                        '<div class="row">'+
+                                            '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                                '<p><b>Tip: </b> '+podaci[i].tip.naziv+'</p>'+
+                                            '</div>'+
+                                            '<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">'+
+                                                '<p><b>Marka: </b>'+podaci[i].marka.naziv+'</p>'+
+                                            '</div>'+
+                                        '</div>';
+
+                            if (podaci[i]._id != null) {
+                                auti+='<p class="text-right">'+
+                                    '<button class="btn btn-danger" onclick="poruci(`'+podaci[i]._id+'`)">Poruci</button>&nbsp;'+
+                                    '<button class="btn btn-success" onclick="komentar(`'+podaci[i]._id+'`)">Komentar</button>'+
+                                '</p>';
+                            }
+                                      
+                                    auti+='</div>'+
+                                '</div>';
+                                };
+
+                        $('#auti').html(auti);
+                });
+            }
+
+            function poruci (idAuta) {
+                $.post( '/autosalon/order/create', 
+                    { automobil: idAuta }).done(function(data) {
+
+                    if (data == 'OK') {
+                        location.href = '/autosalon/profile';
+                    } else {
+                        alert('Greska pri kreiranju porudzbe!');
+                    }
+                });
+            }
+
+            function komentar (idAuta) {
+
+                $('#komentAuto').val(idAuta);
+                $('#comment').modal('toggle');
+            }
+        </script>
+  	</head>
+  	<body>
+
+        <!-- Registracija -->
+        <div class="modal fade" id="register">
+            <div class="modal-dialog" style="width: 400px; margin-top: 10%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" 
+                            aria-hidden="true">&times;</button>
+                        <h2 class="modal-title">Registracija</h2>
+                    </div>
+                    <form action="/autosalon/user/create" method="POST" role="form">
+
+                        <div class="modal-body">
+                        
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="ime" placeholder="Ime" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="przme" placeholder="Prezime" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="pswd" placeholder="Prezime" required>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+                            <button type="submit" class="btn btn-primary">Zapamti</button>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!-- Komentar -->
+        <div class="modal fade" id="comment">
+            <div class="modal-dialog" style="width: 400px; margin-top: 10%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" 
+                            aria-hidden="true">&times;</button>
+                        <h2 class="modal-title">Komentar</h2>
+                    </div>
+                    <form action="/autosalon/comnt/create" method="POST" role="form">
+
+                        <div class="modal-body">
+
+                            <input id="komentAuto" type="hidden" name="automobil" value="">
+                        
+                            <div class="form-group">
+                                <input id="nadimak" type="text" class="form-control" name="nadimak" placeholder="Nadimak" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <textarea id="sadrzaj" rows="3" class="form-control" name="sadrzaj" 
+                                    placeholder="Vas komentar..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+                            <button type="submit" class="btn btn-primary">Zapamti</button>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+  		<div class="jumbotron">
+  			<div class="container">
+			    <h1>{{title}}</h1>
+			    <p>Dobrodosli na {{title}}</p>
+  			</div>
+  		</div>
+
+        <div class="container">
+
+            <div class="page-header" style="margin-top: 5px">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a href="/autosalon/">Pocetna</a></li>
+                            <li role="presentation"><a href="/autosalon/about">O nama</a></li>
+                            <li role="presentation"><a href="/autosalon/contact">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-right  ">
+                        {{#user}}
+                            <p class="text-right"><h4 style="margin: 2px">Prijavljeni ste kao: 
+                                <a href="profile">{{user.ime}} {{user.przme}}</a> 
+                                <span><a href="/autosalon/logout" class="btn btn-warning">Odjava</a></span></h4> 
+                            </p>
+                        {{/user}}
+                        {{^user}}
+                            <form action="/autosalon/login" method="POST" class="form-inline" role="form">
+                            
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="pswd" placeholder="Lozinka" required>
+                                </div>
+                            
+                                <button type="submit" class="btn btn-primary">Prijava</button>
+                                <a class="btn btn-danger" data-toggle="modal" href='#register'>Registracija</a>
+                            </form>
+                        {{/user}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    
+                    <div class="well">
+                        <div class="row">
+
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <div class="input-group">
+
+                                    <input id="termin" type="text" class="form-control" placeholder="Pretraga modela...">
+
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button" onclick="pronadji()">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div>
+
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <select class="form-control" id="marka" onchange="sortiraj()"></select>
+                            </div>
+                        </div>
+                                
+                    </div>
+
+                    <div id="auti" class="row">
+                        {{#user}}
+                            {{#content}}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="well">
+                                        <legend>{{marka.naziv }} ({{model}})</legend>
+
+                                        <p>{{opis}}</p>
+
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <h4>{{cena}} EUR</h4>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <h4>{{stanje}} KOM</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <p><b>Tip: </b> {{tip.naziv}}</p>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <p><b>Marka: </b>{{marka.naziv}}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="text-right">
+                                            <button class="btn btn-danger" onclick="poruci('{{_id}}')">Poruci</button>
+                                            <button class="btn btn-success" onclick="komentar('{{_id}}')">Komentar</button>
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            {{/content}}
+                        {{/user}}
+
+                        {{^user}}
+                            {{#content}}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="well">
+                                        <legend>{{marka.naziv }} ({{model}})</legend>
+
+                                        <p>{{opis}}</p>
+
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <h4>{{cena}} EUR</h4>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <h4>{{stanje}} KOM</h4>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            {{/content}}
+                        {{/user}}
+                    </div>
+                </div>
+
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                    {{#comnts}}
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h4>{{automobil.model}}</h4>
+                            <p>{{sadrzaj}}</p>
+                            <p class="text-right"><i><b>#{{nadimak}}</b></i></p>
+                        </div>
+                    </div>
+                    {{/comnts}}
+                </div>
+            </div>
+        </div>
+  	</body>
+</html>

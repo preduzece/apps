@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adminpanel | {{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+
+    <script type="text/javascript" src="/javascripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+        var statistika = []; 
+
+        $.get( "/autosalon/service/stats", 
+            function( result ) {
+                if (typeof(result) != 'undefined'){
+
+                    statistika.push(['Marka', 'Broj vozila']);
+
+                    for (var i = 0; i < result.length; i++) {
+                        statistika.push([result[i]._id, result[i].count]);
+                    };
+                } else alert(result);
+        });
+
+        google.load("visualization", "1.1", {packages:["bar"]});
+        setTimeout(google.setOnLoadCallback(drawStuff), 1000);
+
+        function drawStuff() {
+
+            /*for (var i = 1; i < statistika.length; i++) {
+
+                window.marka = statistika[i][0];
+
+                $.get( "/autosalon/marka/find", 
+                    {id: statistika[i][0]}, function (data) {
+                        marka = data;
+                });
+            
+                console.log(marka);
+            }
+
+            console.log(statistika);*/
+
+            var data = new google.visualization.arrayToDataTable(statistika);
+
+            var options = {
+              title: 'Statistika porudzbi',
+              width: 800,
+              legend: { position: 'none' },
+              chart: { subtitle: 'broj porudzbi po markama automobila' },
+              axes: {
+                x: {
+                  0: { side: 'top', label: 'Naziv marke'} // Top x-axis.
+                },
+                y: {
+                  0: { side: 'left', label: 'Broj porudzbi'} // Top x-axis.
+                }
+              },
+              bar: { groupWidth: "90%" }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('chart'));
+            // Convert the Classic options to Material options.
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        };
+    </script>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+        <h1>{{ title }}</h1>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <p class="text-left">
+                    <ul class="nav nav-pills">
+                        <li role="presentation"><a href="/autosalon/panel">Automobili</a></li>
+                        <li role="presentation"><a href="/autosalon/panel/users">Korisnici</a></li>
+                        <li role="presentation"><a href="/autosalon/panel/orders">Porudzbe</a></li>
+                        <li role="presentation" class="active"><a href="/autosalon/panel/stats">Statistika</a></li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <p class="text-right">
+                    Dobrodosli {{ admin.ime}} {{ admin.przme }}
+                    <a href="/autosalon/panel/logout" class="btn btn-warning">Odjava</a>
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-xs-8 col-sm-8 col-md-offset-1 col-md-8 col-lg-8">
+            <p class="text-right">
+                <button class="btn btn-success" onclick="drawStuff()">Osvezi</button>
+            </p>
+            <div id="chart" style="height: 400px"></div>
+        </div>
+    </div>
+</body>
+</html>

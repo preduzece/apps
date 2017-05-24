@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+	    <title>Adminpanel | {{ title }}</title>
+	    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+
+	    <script type="text/javascript" src="/javascripts/jquery-1.11.2.min.js"></script>
+	    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  	</head>
+  	<body>
+
+        <div class="container">
+            <div class="row" style="margin-top: 15%">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="well">
+                        <form action="/autosalon/panel/login" method="POST" role="form">
+                            <legend>Administrator</legend>
+                        
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="pswd" placeholder="Lozinka" required>
+                            </div>
+                        
+                            <p class="text-right">
+                                <button type="reset" class="btn btn-default">Reset</button>
+                                <button type="submit" class="btn btn-primary">Prijava</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+  	</body>
+</html>

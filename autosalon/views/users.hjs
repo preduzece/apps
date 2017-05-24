@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adminpanel | {{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+
+    <script type="text/javascript" src="/javascripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        function obrisi (userId) {
+            $.post( '/autosalon/user/delete', 
+                { korisnik: userId }).done(function(data) {
+
+                if (data == 'OK') {
+                    $('#korisnik'+userId).remove();
+                } else {
+                    alert('Greska pri kreiranju porudzbe!');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="container">
+	    <h1>{{ title }}</h1>
+	    <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <p class="text-left">
+                    <ul class="nav nav-pills">
+                        <li role="presentation"><a href="/autosalon/panel">Automobili</a></li>
+                        <li role="presentation" class="active"><a href="/autosalon/panel/users">Korisnici</a></li>
+                        <li role="presentation"><a href="/autosalon/panel/orders">Porudzbe</a></li>
+                        <li role="presentation"><a href="/autosalon/panel/stats">Statistika</a></li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <p class="text-right">
+                    Dobrodosli {{ admin.ime}} {{ admin.przme }}
+                    <a href="/autosalon/panel/logout" class="btn btn-warning">Odjava</a>
+                </p>
+            </div>
+        </div>
+		</div>
+	</div>
+
+    <div class="container">
+        <div class="row">
+            {{#content}}
+            <div id="korisnik{{_id}}" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="well">
+                    <h4>{{ime}} {{przme}} ({{role}})</h4>
+                    <p><span class="glyphicon glyphicon-envelope"></span> {{email}}</p>
+
+                    <p class="text-right">
+                        <button type="button" class="btn btn-danger btn-sm" onclick="obrisi('{{_id}}')"> 
+                            <span class="glyphicon glyphicon-trash"></span></button></p>
+                </div>
+            </div>
+            {{/content}}
+        </div>
+    </div>
+</body>
+</html>
